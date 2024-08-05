@@ -4,13 +4,19 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
+interest_rate = 1.01
+initial_debt = 1000
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm123')
+def calculate_debt(days):
+  if days < 0:
+    print('cringe :(')
+    return 0
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+  if days == 0:
+    return initial_debt
+
+  debt_yesterday = calculate_debt(days - 1)
+  return debt_yesterday * interest_rate
+
+print('+/-', int(calculate_debt(365)), '$')
