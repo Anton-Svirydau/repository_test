@@ -19,4 +19,4 @@ def calculate_debt(days):
   debt_yesterday = calculate_debt(days - 1)
   return debt_yesterday * interest_rate
 
-print('+/-', int(calculate_debt(365)), '$')
+print('+/-', int(calculate_debt(300)), '$')
