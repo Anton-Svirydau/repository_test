@@ -20,3 +20,13 @@ def calculate_debt(days):
   return debt_yesterday * interest_rate
 
 print('+/-', int(calculate_debt(300)), '$')
+
+
+def reverse_sequence():
+  num = int(input())
+  if num != -1:
+    reverse_sequence()
+    print(num)
+
+
+reverse_sequence()
