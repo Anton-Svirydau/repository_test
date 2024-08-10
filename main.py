@@ -127,7 +127,7 @@ class MathUtils:
 result = MathUtils.fibonacci(3)
 print(result)
 '''
-
+'''
 class StringUtils:
     @staticmethod
     def reverse_string(string):
@@ -141,3 +141,24 @@ class TextUtils:
 
 result = TextUtils.reverse_and_uppercase("Hello World")
 print(result)
+'''
+
+class Functions:
+    @staticmethod
+    def calculate_debt(days):
+        if days == 0:
+            return 1000
+
+        return Functions.calculate_debt(days - 1) * 1.01
+
+    @staticmethod
+    def reverse_sequence():
+        num = int(input())
+        if num != -1:
+            Functions.reverse_sequence()
+            print(num)
+
+result = int(Functions.calculate_debt(300))
+print(result)
+
+result = Functions.reverse_sequence()
