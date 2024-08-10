@@ -158,7 +158,6 @@ class Functions:
             Functions.reverse_sequence()
             print(num)
 
-result = int(Functions.calculate_debt(300))
-print(result)
+print(int(Functions.calculate_debt(300)))
 
-result = Functions.reverse_sequence()
+Functions.reverse_sequence()
