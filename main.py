@@ -70,14 +70,50 @@ class Person:
 tom = Person("Tom")
 '''
 
-def reverse_sequence():
-  num = int(input())
-  if num != -1:
-    reverse_sequence()
-    print(num)
+'''
+class MyClass:
+  @staticmethod
+  def static_method():
+    print("This is a static method in a class")
 
 
-reverse_sequence()
+MyClass.static_method()
+'''
+
+'''
+class Calculator:
+  @staticmethod
+  def add_numbers(x, y):
+    return x + y
+
+
+result = Calculator.add_numbers(3, 5)
+print(result)
+'''
+
+'''
+class Math:
+  @staticmethod
+  def add(x, y):
+    return x + y
+
+  @staticmethod
+  def subtract(x, y):
+    return x - y
+
+print(Math.add(2, 3))
+print(Math.subtract(5, 2))
+'''
+
+'''
+class StringUtils:
+  @staticmethod
+  def reverse_string(string):
+    return string[::-1]
+
+result = StringUtils.reverse_string('string')
+print(result)
+'''
 
 
 
