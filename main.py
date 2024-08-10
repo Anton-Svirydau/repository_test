@@ -114,7 +114,30 @@ class StringUtils:
 result = StringUtils.reverse_string('string')
 print(result)
 '''
+'''
+class MathUtils:
+    _fib_cache = {0: 0, 1: 1}
 
+    @staticmethod
+    def fibonacci(n):
+        if n not in MathUtils._fib_cache:
+            MathUtils._fib_cache[n] = MathUtils.fibonacci(n - 1) + MathUtils.fibonacci(n - 2)
+        return MathUtils._fib_cache[n]
 
+result = MathUtils.fibonacci(3)
+print(result)
+'''
 
+class StringUtils:
+    @staticmethod
+    def reverse_string(string):
+        return string[::-1]
 
+class TextUtils:
+    @staticmethod
+    def reverse_and_uppercase(string):
+        reversed_string = StringUtils.reverse_string(string)
+        return reversed_string.upper()
+
+result = TextUtils.reverse_and_uppercase("Hello World")
+print(result)
