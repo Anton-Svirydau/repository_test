@@ -162,7 +162,7 @@ print(int(Functions.calculate_debt(300)))
 
 Functions.reverse_sequence()
 '''
-
+'''
 class Factorial:
     @staticmethod
     def recursive(n):
@@ -186,3 +186,16 @@ print(Factorial.iterative(10))
 
 print(Factorial().recursive(10))
 print(Factorial().iterative(10))
+'''
+def gcd_recursive(a, b):
+    min_num = min(a, b)
+    max_num = max(a, b)
+
+    if min_num == 0:
+        return max_num
+    elif min_num == 1:
+        return 1
+    else:
+        return gcd_recursive(min_num, max_num % min_num)
+a, b = int(input()), int(input())
+print(gcd_recursive(a, b))
