@@ -187,6 +187,7 @@ print(Factorial.iterative(10))
 print(Factorial().recursive(10))
 print(Factorial().iterative(10))
 '''
+'''
 def gcd_recursive(a, b):
     min_num = min(a, b)
     max_num = max(a, b)
@@ -199,3 +200,18 @@ def gcd_recursive(a, b):
         return gcd_recursive(min_num, max_num % min_num)
 a, b = int(input()), int(input())
 print(gcd_recursive(a, b))
+'''
+'''
+def gcd_iter(a, b):
+    while a != b:
+        if a > b:
+            a -= b
+        else:
+            b -= a
+    return b
+a, b = int(input()), int(input())
+print(gcd_iter(a, b))
+'''
+import math
+a, b = int(input()), int(input())
+print(math.gcd(a, b))
