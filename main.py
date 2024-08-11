@@ -142,7 +142,7 @@ class TextUtils:
 result = TextUtils.reverse_and_uppercase("Hello World")
 print(result)
 '''
-
+'''
 class Functions:
     @staticmethod
     def calculate_debt(days):
@@ -161,3 +161,28 @@ class Functions:
 print(int(Functions.calculate_debt(300)))
 
 Functions.reverse_sequence()
+'''
+
+class Factorial:
+    @staticmethod
+    def recursive(n):
+        if n == 1:
+            return n
+        else:
+            return n * Factorial.recursive(n - 1)
+
+    @staticmethod
+    def iterative(n):
+        i = 1
+        result = 1
+
+        for i in range(1, n + 1):
+            result *= i
+
+        return result
+
+print(Factorial.recursive(10))
+print(Factorial.iterative(10))
+
+print(Factorial().recursive(10))
+print(Factorial().iterative(10))
