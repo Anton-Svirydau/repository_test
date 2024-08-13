@@ -212,6 +212,48 @@ def gcd_iter(a, b):
 a, b = int(input()), int(input())
 print(gcd_iter(a, b))
 '''
+'''
 import math
 a, b = int(input()), int(input())
 print(math.gcd(a, b))
+'''
+
+import random
+
+array_size = 20
+random_array = [random.randint(1, 99) for _ in range(array_size)]
+print(*random_array)
+
+def bubble_sort(arr):
+    def swap(i, j):
+        arr[i], arr[j] = arr[j], arr[i]
+
+    n = len(arr)
+    swapped = True
+
+    x = -1
+    while swapped:
+        swapped = False
+        x = x + 1
+        for i in range(1, n - x):
+            if arr[i - 1] > arr[i]:
+                swap(i - 1, i)
+                swapped = True
+
+    return arr
+
+print(*bubble_sort(random_array))
+
+def selection_sort(arr):
+    for i in range(len(arr)):
+        minimum = i
+
+        for j in range(i + 1, len(arr)):
+            if arr[j] < arr[minimum]:
+                minimum = j
+
+        arr[minimum], arr[i] = arr[i], arr[minimum]
+
+    return arr
+
+print(*selection_sort(random_array))
