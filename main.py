@@ -221,7 +221,7 @@ print(math.gcd(a, b))
 import random
 
 array_size = 20
-random_array = [random.randint(1, 99) for _ in range(array_size)]
+random_array = [random.randint(0, 99) for _ in range(array_size)]
 print(*random_array)
 
 def bubble_sort(arr):
