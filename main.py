@@ -217,7 +217,7 @@ import math
 a, b = int(input()), int(input())
 print(math.gcd(a, b))
 '''
-
+'''
 import random
 
 array_size = 20
@@ -257,3 +257,15 @@ def selection_sort(arr):
     return arr
 
 print(*selection_sort(random_array))
+'''
+
+def sort_array(arr):
+    return sorted(arr)
+
+numbers = [5, 25, 9, 16, 1, 4]
+sorted_numbers = sort_array(numbers)
+print(sorted_numbers)
+
+strings = ["kek", "omg", "lol", "cringe"]
+sorted_strings = sort_array(strings)
+print(sorted_strings)
