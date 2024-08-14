@@ -7,13 +7,13 @@ def number_reverse():
         if len(str_number) > 5:
             raise Exception('Incorrect number')
         reverse_number = int(str_number[::-1])
-        print(reverse_number)
+        return reverse_number
     except ValueError:
-        print('Incorrect data')
+        return 'Incorrect data'
     except Exception as e:
-        print(e)
+        return e
 
 
-number_reverse()
-number_reverse()
-number_reverse()
+print(number_reverse())
+print(number_reverse())
+print(number_reverse())
