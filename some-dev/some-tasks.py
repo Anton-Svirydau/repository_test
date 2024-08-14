@@ -1,8 +1,8 @@
-def some_reverse(x):
+def some_reverse(number_of_requests):
 
-    print(f'Enter {x} numbers, no more than 5 digits each')
+    print(f'Enter {number_of_requests} numbers, no more than 5 digits each')
 
-    for i in range(x):
+    for i in range(number_of_requests):
         some_number = int(input())
         try:
             if len(str(some_number)) > 5:
