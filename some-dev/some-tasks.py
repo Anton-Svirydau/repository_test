@@ -1,3 +1,4 @@
+"""
 def some_reverse(number_of_requests):
 
     print(f'Enter {number_of_requests} numbers, no more than 5 digits each')
@@ -17,3 +18,24 @@ def some_reverse(number_of_requests):
 
 
 some_reverse(3)
+"""
+
+
+def number_reverse():
+
+    print('Enter number, no more than 5 digits')
+    input_number = int(input())
+    try:
+        if len(str(input_number)) > 5:
+            raise Exception('Incorrect number')
+        reverse_number = int(str(input_number)[::-1])
+        print(reverse_number)
+    except ValueError:
+        print('Incorrect data')
+    except Exception as e:
+        print(e)
+
+
+number_reverse()
+number_reverse()
+number_reverse()
