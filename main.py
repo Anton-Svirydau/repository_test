@@ -263,9 +263,7 @@ def sort_array(arr):
     return sorted(arr)
 
 numbers = [5, 25, 9, 16, 1, 4]
-sorted_numbers = sort_array(numbers)
-print(sorted_numbers)
+print(*sort_array(numbers))
 
 strings = ["kek", "omg", "lol", "cringe"]
-sorted_strings = sort_array(strings)
-print(sorted_strings)
+print(*sort_array(strings))
