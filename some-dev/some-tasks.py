@@ -15,4 +15,5 @@ def some_reverse(number_of_requests):
             print(e)
         print('The code is correct')
 
+
 some_reverse(3)
