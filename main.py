@@ -4,7 +4,7 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-'''
+"""
 interest_rate = 1.01
 initial_debt = 1000
 
@@ -30,8 +30,7 @@ def reverse_sequence():
 
 
 reverse_sequence()
-'''
-
+"""
 
 '''
 class Person:
@@ -259,11 +258,15 @@ def selection_sort(arr):
 print(*selection_sort(random_array))
 '''
 
+'''
 def sort_array(arr):
     return sorted(arr)
+
 
 numbers = [5, 25, 9, 16, 1, 4]
 print(*sort_array(numbers))
 
 strings = ["kek", "omg", "lol", "cringe"]
 print(*sort_array(strings))
+'''
+
