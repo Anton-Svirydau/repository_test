@@ -270,6 +270,7 @@ strings = ["kek", "omg", "lol", "cringe"]
 print(*sort_array(strings))
 '''
 
+'''
 a = list(map(int, input().split()))
 k = int(input())
 
@@ -285,3 +286,6 @@ for _ in range(k):
             if a[i] % x == 0:
                 s += a[i]
         print(s)
+'''
+
+
