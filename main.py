@@ -288,4 +288,20 @@ for _ in range(k):
         print(s)
 '''
 
+student_amount = int(input())
 
+names = []
+grades = []
+for student_idx in range(student_amount):
+    name, grade = input().split()
+    names.append(name)
+    grades.append(int(grade))
+
+for student_i in range(student_amount):
+    for student_j in range(student_amount):
+        if grades[student_i] > grades[student_j]:
+            grades[student_i], grades[student_j] = grades[student_j], grades[student_i]
+            names[student_i], names[student_j] = names[student_j], names[student_i]
+
+for student_idx in range(student_amount):
+    print(names[student_idx], grades[student_idx])
