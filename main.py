@@ -288,6 +288,7 @@ for _ in range(k):
         print(s)
 '''
 
+'''
 student_amount = int(input())
 
 names = []
@@ -305,3 +306,4 @@ for student_i in range(student_amount):
 
 for student_idx in range(student_amount):
     print(names[student_idx], grades[student_idx])
+'''
