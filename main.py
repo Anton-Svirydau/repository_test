@@ -307,7 +307,7 @@ for student_i in range(student_amount):
 for student_idx in range(student_amount):
     print(names[student_idx], grades[student_idx])
 '''
-
+'''
 a = list(map(int, input().split()))
 b = 0
 c = 0
@@ -322,3 +322,9 @@ if b != 0:
     print(b, c)
 else:
     print(0, 0)
+'''
+
+a = list(map(int, input().split()))
+
+print(*a, sep='+', end='')
+print('=' + str(sum(a)))
