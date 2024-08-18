@@ -307,3 +307,18 @@ for student_i in range(student_amount):
 for student_idx in range(student_amount):
     print(names[student_idx], grades[student_idx])
 '''
+
+a = list(map(int, input().split()))
+b = 0
+c = 0
+
+for i in range(2, len(a)):
+    if a[i] > a[i-1] + a[i-2]:
+        b += 1
+        if c < a[i]:
+            c = a[i]
+
+if b != 0:
+    print(b, c)
+else:
+    print(0, 0)
