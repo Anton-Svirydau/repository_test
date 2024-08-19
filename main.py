@@ -324,7 +324,33 @@ else:
     print(0, 0)
 '''
 
+'''
 a = list(map(int, input().split()))
 
 print(*a, sep='+', end='')
 print('=' + str(sum(a)))
+'''
+
+
+def arithmetic(a, b, operation):
+    if operation == '+':
+        return a + b
+    elif operation == '-':
+        return a - b
+    elif operation == '*':
+        return a * b
+    elif operation == '/':
+        if b != 0:
+            return a / b
+        else:
+            return "Division by zero is impossible"
+    else:
+        return "Unknown operation"
+
+
+print(arithmetic(10, 5, '+'))
+print(arithmetic(10, 5, '-'))
+print(arithmetic(10, 5, '*'))
+print(arithmetic(10, 5, '/'))
+print(arithmetic(10, 0, '/'))
+print(arithmetic(10, 5, '^'))
