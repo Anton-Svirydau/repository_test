@@ -420,7 +420,7 @@ print(is_prime(17))
 print(is_prime(1000))
 '''
 
-
+'''
 def date(day, month, year):
     try:
         datetime.datetime(year, month, day)
@@ -433,3 +433,20 @@ print(date(31, 12, 2020))
 print(date(31, 11, 2020))
 print(date(29, 2, 2020))
 print(date(29, 2, 2021))
+'''
+
+def arithmetic(a, b, operation):
+    if operation == '+':
+        return a + b
+    elif operation == '-':
+        return a - b
+    elif operation == '*':
+        return a * b
+    elif operation == '/':
+        if b != 0:
+            return a / b
+        else:
+            return "Division by zero is impossible"
+    else:
+        return "Unknown operation"
+    
