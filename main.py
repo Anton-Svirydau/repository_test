@@ -2,7 +2,7 @@
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
+import datetime
 
 """
 interest_rate = 1.01
@@ -356,7 +356,7 @@ print(arithmetic(10, 0, '/'))
 print(arithmetic(10, 5, '^'))
 '''
 
-
+'''
 def is_year_leap(year):
     if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
         return True
@@ -368,3 +368,68 @@ print(is_year_leap(2020))
 print(is_year_leap(1900))
 print(is_year_leap(2000))
 print(is_year_leap(2021))
+'''
+
+'''
+def season(month):
+    if month in [12, 1, 2]:
+        return "winter"
+    elif month in [3, 4, 5]:
+        return "spring"
+    elif month in [6, 7, 8]:
+        return "summer"
+    elif month in [9, 10, 11]:
+        return "autumn"
+    else:
+        return "Incorrect number month"
+
+
+print(season(1))
+print(season(4))
+print(season(7))
+print(season(10))
+print(season(13))
+'''
+
+'''
+def bank(a, years):
+    for _ in range(years):
+        a += a * 0.10
+    return a
+
+
+initial_amount = 1000
+years = 5
+final_amount = bank(initial_amount, years)
+print(f"Amount on account in {years} years: {final_amount:.2f} $")
+'''
+
+'''
+def is_prime(n):
+    if n < 2:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+
+print(is_prime(2))
+print(is_prime(4))
+print(is_prime(17))
+print(is_prime(1000))
+'''
+
+
+def date(day, month, year):
+    try:
+        datetime.datetime(year, month, day)
+        return True
+    except ValueError:
+        return False
+
+
+print(date(31, 12, 2020))
+print(date(31, 11, 2020))
+print(date(29, 2, 2020))
+print(date(29, 2, 2021))
