@@ -435,6 +435,7 @@ print(date(29, 2, 2020))
 print(date(29, 2, 2021))
 '''
 
+"""
 def arithmetic(a, b, operation):
     if operation == '+':
         return a + b
@@ -449,4 +450,26 @@ def arithmetic(a, b, operation):
             return "Division by zero is impossible"
     else:
         return "Unknown operation"
-    
+"""
+
+
+def xor_cipher(string, key):
+    ciphered = ''.join(chr(ord(char) ^ key) for char in string)
+    return ciphered
+
+
+def xor_no_cipher(ciphered_string, key):
+    deciphered = ''.join(chr(ord(char) ^ key) for char in ciphered_string)
+    return deciphered
+
+
+original_text = "Hello, World!"
+key = 123
+
+
+ciphered_text = xor_cipher(original_text, key)
+print("Encrypted text:", ciphered_text)
+
+
+deciphered_text = xor_no_cipher(ciphered_text, key)
+print("Decrypted text:", deciphered_text)
