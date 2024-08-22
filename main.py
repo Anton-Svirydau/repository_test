@@ -451,8 +451,7 @@ def arithmetic(a, b, operation):
     else:
         return "Unknown operation"
 """
-
-
+'''
 def xor_cipher(string, key):
     ciphered = ''.join(chr(ord(char) ^ key) for char in string)
     return ciphered
@@ -473,3 +472,16 @@ print("Encrypted text:", ciphered_text)
 
 deciphered_text = xor_no_cipher(ciphered_text, key)
 print("Decrypted text:", deciphered_text)
+'''
+
+a = int(input())
+
+
+def number_1(n):
+    if n <= 1:
+        return 1
+
+    return number_1(n - 1) + number_1(n - 2)*3
+
+
+print(number_1(4))
