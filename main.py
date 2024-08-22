@@ -473,7 +473,7 @@ print("Encrypted text:", ciphered_text)
 deciphered_text = xor_no_cipher(ciphered_text, key)
 print("Decrypted text:", deciphered_text)
 '''
-
+'''
 a = int(input())
 
 
@@ -485,3 +485,27 @@ def number_1(n):
 
 
 print(number_1(4))
+'''
+
+n = int(input())
+
+
+def index_true(x):
+    a = 0
+    if 1 <= x <= n:
+        a = 1
+    return a
+
+
+true_moves = 0
+Kolya_moves = list(map(int, input().split()))
+Kolya_moves_new = []
+
+for e in Kolya_moves:
+    if e not in Kolya_moves_new:
+        Kolya_moves_new.append(e)
+
+for i in Kolya_moves_new:
+    true_moves += index_true(i)
+
+print(true_moves)
