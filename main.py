@@ -487,25 +487,21 @@ def number_1(n):
 print(number_1(4))
 '''
 
-n = int(input())
+
+def lcm(a, b):
+    m = a * b
+    while a != 0 and b != 0:
+        if a > b:
+            a %= b
+        else:
+            b %= a
+    return m // (a + b)
 
 
-def index_true(x):
-    a = 0
-    if 1 <= x <= n:
-        a = 1
-    return a
-
-
-true_moves = 0
-Kolya_moves = list(map(int, input().split()))
-Kolya_moves_new = []
-
-for e in Kolya_moves:
-    if e not in Kolya_moves_new:
-        Kolya_moves_new.append(e)
-
-for i in Kolya_moves_new:
-    true_moves += index_true(i)
-
-print(true_moves)
+while 1:
+    try:
+        x = int(input('a = '))
+        y = int(input('b = '))
+        print('NOK:', lcm(x, y))
+    except ValueError:
+        break
