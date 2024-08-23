@@ -487,7 +487,7 @@ def number_1(n):
 print(number_1(4))
 '''
 
-
+'''
 def lcm(a, b):
     m = a * b
     while a != 0 and b != 0:
@@ -505,3 +505,19 @@ while 1:
         print('NOK:', lcm(x, y))
     except ValueError:
         break
+'''
+
+file = open("text.txt")
+
+lines = 0
+words = 0
+symbols = 0
+
+for line in file:
+    lines += 1
+    words += len(line.split())
+    symbols += len(line)
+
+print("Lines:", lines)
+print("Words:", words)
+print("Symbols:", symbols)
