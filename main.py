@@ -3,7 +3,7 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import datetime
-
+from random import randint
 """
 interest_rate = 1.01
 initial_debt = 1000
@@ -522,7 +522,7 @@ print("Lines:", lines)
 print("Words:", words)
 print("Symbols:", symbols)
 '''
-
+'''
 num = int(input())
 base = 16
 letters = '0123456789ABCDEF'
@@ -533,3 +533,25 @@ while num > 0:
     new = letters[remainder] + new
 
 print(new)
+'''
+
+a = [randint(1, 50) for i in range(10)]
+a.sort()
+print(a)
+
+value = int(input())
+
+left = 0
+right = len(a) - 1
+
+while left <= right:
+    center = (left + right) // 2
+    if value == a[center]:
+        print('ID =', center)
+        break
+    if value > a[center]:
+        left = center + 1
+    else:
+        right = center - 1
+else:
+    print('No value')
