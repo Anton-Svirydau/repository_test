@@ -506,7 +506,7 @@ while 1:
     except ValueError:
         break
 '''
-
+'''
 file = open("text.txt")
 
 lines = 0
@@ -521,3 +521,15 @@ for line in file:
 print("Lines:", lines)
 print("Words:", words)
 print("Symbols:", symbols)
+'''
+
+num = int(input())
+base = 16
+letters = '0123456789ABCDEF'
+new = ''
+
+while num > 0:
+    num, remainder = divmod(num, base)
+    new = letters[remainder] + new
+
+print(new)
