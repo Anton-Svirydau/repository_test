@@ -534,7 +534,7 @@ while num > 0:
 
 print(new)
 '''
-
+'''
 a = [randint(1, 50) for i in range(10)]
 a.sort()
 print(a)
@@ -555,3 +555,20 @@ while left <= right:
         right = center - 1
 else:
     print('No value')
+'''
+
+a = input()
+num_list = []
+
+num = ''
+for char in a:
+    if char.isdigit():
+        num = num + char
+    else:
+        if num != '':
+            num_list.append(int(num))
+            num = ''
+if num != '':
+    num_list.append(int(num))
+
+print(num_list)
