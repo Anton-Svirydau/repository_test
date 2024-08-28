@@ -62,3 +62,8 @@ my_integer4 = round(my_float3)
 print(my_integer3, my_integer4)
 '''
 
+apartment = int(input())
+entrance = (apartment - 1) // 20 + 1
+floor = (apartment - 1) % 20 // 4 + 1
+
+print(entrance, floor)
