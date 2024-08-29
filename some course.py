@@ -81,5 +81,34 @@ print(not is_equal)
 print(x > y, x != y == z)
 '''
 
+'''
 print(bool(-1), bool(29), bool('Hello'))
 print(bool(0), bool(''))
+'''
+
+'''
+if True:
+    print('Hello')
+
+x = 10
+y = 20
+if x > 0 and y > 0:
+    print('x and y is positive')
+elif x < 0:
+    print('x is negative')
+else:
+    print('x is zero')
+
+message = 'Hello'
+if message:
+    print('message is not empty')
+'''
+
+year = 2000
+
+if year % 4 == 0 and year % 100 != 0:
+    print('Year is leap')
+elif year % 400 == 0:
+    print('Year is leap')
+else:
+    print('Year is not leap')
