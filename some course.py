@@ -62,8 +62,24 @@ my_integer4 = round(my_float3)
 print(my_integer3, my_integer4)
 '''
 
+'''
 apartment = int(input())
 entrance = (apartment - 1) // 20 + 1
 floor = (apartment - 1) % 20 // 4 + 1
 
 print(entrance, floor)
+'''
+
+'''
+x = 9
+y = 10
+z = 10
+is_student = True
+is_equal = y == z
+
+print(not is_equal)
+print(x > y, x != y == z)
+'''
+
+print(bool(-1), bool(29), bool('Hello'))
+print(bool(0), bool(''))
