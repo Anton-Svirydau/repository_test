@@ -104,6 +104,7 @@ if message:
     print('message is not empty')
 '''
 
+'''
 year = 2000
 
 if year % 4 == 0 and year % 100 != 0:
@@ -112,3 +113,77 @@ elif year % 400 == 0:
     print('Year is leap')
 else:
     print('Year is not leap')
+'''
+
+'''
+my_string = """Hello
+world
+123"""
+print(my_string)
+
+first_name = 'Anton'
+second_name = 'Smith'
+print(first_name + ' ' + second_name)
+print(len(first_name))
+
+my_integer = 100
+my_string = str(my_integer)
+print(my_string)
+my_integer1 = int(my_string)
+print(my_integer1)
+
+my_string1 = input('Enter a number: ')
+print(type(my_string1))
+'''
+
+'''
+big_integer = 2 ** 1000
+print(len(str(big_integer)))
+
+my_string = 'Hello'
+
+print('Hello' in my_string)
+print('hello' in my_string)
+'''
+
+'''
+my_string1 = 'Alice'
+my_string2 = '   Hello, world!    '
+my_string3, my_string4 = '10', '10x'
+
+print(my_string1.upper())
+print(my_string1.lower())
+print(my_string2)
+print(my_string2.strip())
+print(my_string2.replace('world', 'Python'))
+print(my_string2.count('l'), my_string2.count('rl'), my_string2.count('R'))
+print(my_string3.isdigit(), my_string4.isdigit())
+'''
+
+'''
+integer = input('Enter a number: ')
+if integer.isdigit():
+    integer = int(integer)
+
+print(type(integer))
+'''
+
+'''
+name = 'Alice'
+age = 25
+print(f"Hello, my name is {name}. I'm {age} years old")
+
+x = 10
+y = 5
+print(f"summary is {x + y}, multiplication is {x * y}")
+'''
+
+'''
+my_string = input("Enter a number: ")
+
+if my_string.isdigit():
+    my_integer = int(my_string)
+    print(my_integer)
+else:
+    print(f"{my_string} is not a number")
+'''
