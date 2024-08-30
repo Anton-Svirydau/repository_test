@@ -200,6 +200,7 @@ print(txt2)
 print(txt3)
 '''
 
+'''
 # :> Left aligns the result (within the available space)
 txt = "We have {:>8} chickens."
 print(txt.format(49))
@@ -268,3 +269,19 @@ txt = "You scored {:%}"
 print(txt.format(0.25))
 txt = "You scored {:.0%}"
 print(txt.format(0.25))
+'''
+
+print("Mr. %s, the total is %.2f." % ("Jekyll", 15.53))
+print("The character after %c is %c." % ("B", "C"))
+place = "New York"
+print("Welcome to %s!" % place)
+year = 2019
+print("%i will be a perfect year." % year)
+number = 15
+print("%i in octal is %o" % (number, number))
+number = 15
+print("%i in hex is %02x" % (number, number))
+number = 15
+print("%i in hex is %04X" % (number, number))
+price = 15.95
+print("the price is %.2f" % price)
