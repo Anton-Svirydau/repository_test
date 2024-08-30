@@ -271,6 +271,7 @@ txt = "You scored {:.0%}"
 print(txt.format(0.25))
 '''
 
+# % %c %s %i and %d %u %o %x %X %e %E %f %g %G
 print("Mr. %s, the total is %.2f." % ("Jekyll", 15.53))
 print("The character after %c is %c." % ("B", "C"))
 place = "New York"
