@@ -557,6 +557,7 @@ else:
     print('No value')
 '''
 
+'''
 a = input()
 num_list = []
 
@@ -572,3 +573,18 @@ if num != '':
     num_list.append(int(num))
 
 print(num_list)
+'''
+
+income = 45000
+tax_payable = 0
+print("Given income", income)
+
+if income <= 10000:
+    tax_payable = 0
+elif income <= 20000:
+    x = income - 10000
+    tax_payable = x * 10 / 100
+else:
+    tax_payable += (income - 20000) * 20 / 100
+
+print("Total tax to pay is", tax_payable)
