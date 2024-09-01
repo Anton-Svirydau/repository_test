@@ -575,6 +575,7 @@ if num != '':
 print(num_list)
 '''
 
+'''
 income = 45000
 tax_payable = 0
 print("Given income", income)
@@ -588,3 +589,23 @@ else:
     tax_payable += (income - 20000) * 20 / 100
 
 print("Total tax to pay is", tax_payable)
+'''
+
+
+def first_last_same(number_list):
+    print("Given list:", number_list)
+
+    first_num = number_list[0]
+    last_num = number_list[-1]
+
+    if first_num == last_num:
+        return True
+    else:
+        return False
+
+
+numbers_x = [10, 20, 30, 40, 10]
+print("result is", first_last_same(numbers_x))
+
+numbers_y = [75, 65, 35, 75, 30]
+print("result is", first_last_same(numbers_y))
