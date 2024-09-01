@@ -591,7 +591,7 @@ else:
 print("Total tax to pay is", tax_payable)
 '''
 
-
+'''
 def first_last_same(number_list):
     print("Given list:", number_list)
 
@@ -609,3 +609,26 @@ print("result is", first_last_same(numbers_x))
 
 numbers_y = [75, 65, 35, 75, 30]
 print("result is", first_last_same(numbers_y))
+'''
+
+
+def palindrome(number):
+    print("original number", number)
+    original_num = number
+
+    # reverse the given number
+    reverse_num = 0
+    while number > 0:
+        reminder = number % 10
+        reverse_num = (reverse_num * 10) + reminder
+        number = number // 10
+
+    # check numbers
+    if original_num == reverse_num:
+        print("Given number palindrome")
+    else:
+        print("Given number is not palindrome")
+
+
+palindrome(121)
+palindrome(125)
