@@ -1,4 +1,4 @@
-# print('Hello World')
+# print, variables, numbers, bool, if, strings
 
 """
 print('Hello', 'World', end=' ', sep='')
