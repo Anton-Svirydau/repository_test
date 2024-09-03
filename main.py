@@ -634,7 +634,7 @@ palindrome(121)
 palindrome(125)
 '''
 
-
+'''
 def shift(lst, steps):
     if steps < 0:
         steps = abs(steps)
@@ -653,3 +653,18 @@ print(nums)
 
 shift(nums, 3)
 print(nums)
+'''
+
+num = int(input())
+base = 16
+letters = 'ABCDEF'
+new = ''
+
+while num > 0:
+    num, remainder = divmod(num, base)
+    if remainder > 9:
+        letter_id = remainder - 10
+        remainder = letters[letter_id]
+    new = str(remainder) + new
+
+print(new)
