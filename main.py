@@ -671,6 +671,7 @@ while num > 0:
 print(new)
 '''
 
+'''
 n, m = [int(i) for i in input().split()]
 spiral = [[0] * m for _ in range(n)]
 c = 1
@@ -695,3 +696,15 @@ for i in range(n):
     for j in range(m):
         print(str(spiral[i][j]).ljust(3), end=' ')
     print()
+'''
+
+
+def lastSurvivor(n, k):
+    if n == 1:
+        return 1
+    elif n > 1:
+        return (1 + (lastSurvivor(n - 1, k) + k - 1) % n)
+
+
+n, k = int(input()), int(input())
+print(lastSurvivor(n, k))
