@@ -698,7 +698,7 @@ for i in range(n):
     print()
 '''
 
-
+'''
 def lastSurvivor(n, k):
     if n == 1:
         return 1
@@ -708,3 +708,12 @@ def lastSurvivor(n, k):
 
 n, k = int(input()), int(input())
 print(lastSurvivor(n, k))
+'''
+
+n = int(input())
+matrix = [list(map(int, input().split())) for _ in range(n)]
+if all(i in sum(matrix,[]) for i in range(1, n**2 + 1)):
+    print('YES' if all(sum(i) == sum(j) == sum([matrix[i][i] for i in range(n)]) == sum([matrix[n-i-1][i] for i in range(n)]) for i in matrix for j in list(map(list, zip(*matrix)))) else 'NO')
+else:
+    print('NO')
+    
