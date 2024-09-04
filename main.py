@@ -710,10 +710,25 @@ n, k = int(input()), int(input())
 print(lastSurvivor(n, k))
 '''
 
+'''
 n = int(input())
 matrix = [list(map(int, input().split())) for _ in range(n)]
 if all(i in sum(matrix,[]) for i in range(1, n**2 + 1)):
     print('YES' if all(sum(i) == sum(j) == sum([matrix[i][i] for i in range(n)]) == sum([matrix[n-i-1][i] for i in range(n)]) for i in matrix for j in list(map(list, zip(*matrix)))) else 'NO')
 else:
     print('NO')
-    
+'''
+
+lst = input().split()
+
+
+def sub_lists(lst1):
+    lists = [[]]
+    for i in range(len(lst1) + 1):
+        for j in range(i):
+            lists.append(lst1[j:i])
+    lists = sorted(lists, key=len)
+    return lists
+
+
+print(sub_lists(lst))
