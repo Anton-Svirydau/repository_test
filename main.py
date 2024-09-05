@@ -770,6 +770,7 @@ print(slicer((1, 2, 3), 8))
 print(slicer((1, 8, 3, 4, 8, 8, 9, 2), 8))
 '''
 
+'''
 from collections import namedtuple
 Student = namedtuple('Student', 'name age mark city')
 students = (
@@ -795,3 +796,17 @@ def good_students(students):
 
 
 good_students(students)
+'''
+
+
+def slicer(any_tuple, element):
+    if element in any_tuple:
+        if any_tuple.count(element) > 1:
+            first_index = any_tuple.index(element)
+            second_index = any_tuple.index(element, first_index + 1) + 1
+            return any_tuple[first_index:second_index]
+        else:
+            return any_tuple[any_tuple.index(element):]
+    else:
+        return ()
+    
