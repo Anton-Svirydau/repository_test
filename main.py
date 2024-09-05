@@ -719,6 +719,7 @@ else:
     print('NO')
 '''
 
+'''
 lst = input().split()
 
 
@@ -732,3 +733,16 @@ def sub_lists(lst1):
 
 
 print(sub_lists(lst))
+'''
+
+
+def del_from_tuple(tpl, elem):
+    if elem in tpl:
+        elem_index = tpl.index(elem)
+        return tpl[:elem_index] + tpl[elem_index + 1:]
+    return tpl
+
+
+print(del_from_tuple((1, 2, 3), 1))
+print(del_from_tuple((1, 2, 3, 1, 2, 3, 4, 5, 2, 3, 4, 2, 4, 2), 3))
+print(del_from_tuple((2, 4, 6, 6, 4, 2), 9))
