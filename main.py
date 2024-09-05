@@ -748,6 +748,7 @@ print(del_from_tuple((1, 2, 3, 1, 2, 3, 4, 5, 2, 3, 4, 2, 4, 2), 3))
 print(del_from_tuple((2, 4, 6, 6, 4, 2), 9))
 '''
 
+'''
 BEGIN_INDEX = 0
 END_INDEX = -1
 
@@ -767,3 +768,30 @@ def slicer(any_tuple, element):
 
 print(slicer((1, 2, 3), 8))
 print(slicer((1, 8, 3, 4, 8, 8, 9, 2), 8))
+'''
+
+from collections import namedtuple
+Student = namedtuple('Student', 'name age mark city')
+students = (
+   Student('Elena', '13', 7.1, 'Minsk'),
+   Student('Olga', '11', 7.9, 'Brest'),
+   Student('Lisa', '14', 9.1, 'Pinsk'),
+   Student('Dima', '12', 5.2, 'Vitebsk'),
+   Student('Maksim', '15', 6.1, 'Mogilev'),
+   Student('Kolya', '11', 8.7, 'Gomel'),
+   Student('Artur', '13', 5.8, 'Vilnus')
+)
+
+
+def good_students(students):
+        total_mark = 0
+
+        for student in students:
+            total_mark += student.mark
+        avg_mark = total_mark / len(students)
+
+        good_mark_students = [student.name for student in students if student.mark >= avg_mark]
+        print('students ', ', '.join(good_mark_students), ' in this semester!')
+
+
+good_students(students)
