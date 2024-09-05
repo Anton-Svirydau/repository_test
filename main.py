@@ -735,7 +735,7 @@ def sub_lists(lst1):
 print(sub_lists(lst))
 '''
 
-
+'''
 def del_from_tuple(tpl, elem):
     if elem in tpl:
         elem_index = tpl.index(elem)
@@ -746,3 +746,24 @@ def del_from_tuple(tpl, elem):
 print(del_from_tuple((1, 2, 3), 1))
 print(del_from_tuple((1, 2, 3, 1, 2, 3, 4, 5, 2, 3, 4, 2, 4, 2), 3))
 print(del_from_tuple((2, 4, 6, 6, 4, 2), 9))
+'''
+
+BEGIN_INDEX = 0
+END_INDEX = -1
+
+
+def slicer(any_tuple, element):
+    first = second = BEGIN_INDEX
+
+    if element in any_tuple:
+        first = any_tuple.index(element)
+    if any_tuple.count(element) > 1:
+        second = any_tuple.index(element, first + 1) + 1
+    else:
+        second = END_INDEX
+
+    return any_tuple[first:second]
+
+
+print(slicer((1, 2, 3), 8))
+print(slicer((1, 8, 3, 4, 8, 8, 9, 2), 8))
