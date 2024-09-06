@@ -1,4 +1,4 @@
-# list, index
+# list, index, for
 """"""
 
 '''
@@ -109,3 +109,99 @@ new_numbers = numbers[0:5]  # numbers[:5]
 print(new_numbers)
 print(new_numbers[::-1])
 '''
+
+'''
+fruits = ["banana", "apple", "cherry", "watermelon"]
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+print(fruits[::-1])
+fruits.reverse()
+print(fruits)
+
+new_numbers = list(reversed(numbers))
+print(new_numbers)
+'''
+
+'''
+file_names = ["document1.txt", "image1.jpg", "document2.txt", "image2.jpg"]
+greeting = "Hello, Python"
+
+for file_name in file_names:
+    print(file_name)
+
+for char in greeting:
+    print(char)
+'''
+
+'''
+greeting = "Hello, Python"
+count_o = 0
+for char in greeting:
+    if char == "o":
+        count_o += 1
+        print(char)
+print(count_o)
+'''
+
+'''
+students = ["Alice", "Bob", "Charlie", "David"]
+
+for student in students:
+    print(student)
+    for char in student:
+        print(char)
+'''
+
+'''
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+for num in numbers:
+    if num % 2 == 0:
+        continue
+    print(num)
+
+for num in numbers:
+    if num == 10:
+        break
+    print(num)
+'''
+
+'''
+range_object1 = range(10)
+range_object2 = range(1, 10, 2)
+range_object3 = range(10, 1, -1)
+
+print(range_object1)
+print(range_object2)
+print(range_object3)
+
+numbers1 = list(range_object1)
+print(numbers1)
+numbers2 = list(range_object2)
+print(numbers2)
+numbers3 = list(range_object3)
+print(numbers3)
+'''
+
+'''
+numbers = [10, 11, 12, 13, 14, 15]
+
+for i in range(len(numbers)):
+    numbers[i] += 1
+
+print(numbers)
+'''
+
+'''
+greeting = "Hello, Python"
+
+indexes = []
+count = 0
+
+for i in range(len(greeting)):
+    if greeting[i] == "o":
+        count += 1
+        indexes.append(i)
+print(count, indexes)
+'''
+
