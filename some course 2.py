@@ -1,4 +1,4 @@
-# list, index, for, function
+# list, index, for, function, scope
 """"""
 
 '''
@@ -266,10 +266,51 @@ print(format_date(day=15, month="October"))
 print(format_date(month="October", day=15))
 '''
 
-
+'''
 def custom_greeting(*, name: str, greeting: str = "Hello") -> str:
     return f"{greeting}, {name}"
 
 
 print(custom_greeting(name="John", greeting="Good morning"))
 print(custom_greeting(name="John"))
+'''
+
+'''
+local_var = "not local var"
+
+
+def my_function():
+    # local_var = "I'm local variable"
+    print(local_var)
+
+
+my_function()
+print(local_var)
+'''
+
+'''
+COMFORTABLE_TEMPERATURE = 25
+
+
+def get_diff_from_comfortable_temperature(*, temperature: int) -> int:
+    return COMFORTABLE_TEMPERATURE - temperature
+
+
+print(get_diff_from_comfortable_temperature(temperature=20))
+'''
+
+DEFAULT_LEVEL_EXPERIENCE = 200
+
+
+def is_leveled_up(*, current_experience: int, gained_experience: int) -> bool:
+    total_experience = current_experience + gained_experience
+    level_up = False
+
+    if total_experience >= DEFAULT_LEVEL_EXPERIENCE:
+        level_up = True
+
+    return level_up
+
+
+print(is_leveled_up(current_experience=150, gained_experience=60))
+print(is_leveled_up(current_experience=10, gained_experience=30))
