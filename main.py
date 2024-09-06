@@ -809,4 +809,3 @@ def slicer(any_tuple, element):
             return any_tuple[any_tuple.index(element):]
     else:
         return ()
-    
