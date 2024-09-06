@@ -1,4 +1,4 @@
-# list, index, for
+# list, index, for, function
 """"""
 
 '''
@@ -205,7 +205,71 @@ for i in range(len(greeting)):
 print(count, indexes)
 '''
 
-
+'''
 for i in range(1, 10):
     for j in range(1, 10):
         print(i, " * ", j, " = ", i * j)
+'''
+
+'''
+numbers_1 = [1, 2, 3, 4, 5]
+numbers_2 = [6, 7, 8, 9, 10]
+
+
+def find_average(numbers):
+    average = sum(numbers) / len(numbers)
+    return average
+
+
+average_1 = find_average(numbers_1)
+average_2 = find_average(numbers_2)
+print(average_1, average_2)
+'''
+
+'''
+def count_vowels(string):
+    vowels = "aeiouAEIOU"
+    count = 0
+    for char in string:
+        if char in vowels:
+            count += 1
+
+    return count
+
+
+print(count_vowels("Hello, python"))
+print(count_vowels("Python is a very powerful language"))
+'''
+
+'''
+def nothing():
+    print("does nothing")
+
+
+nothing()
+'''
+
+'''
+def nothing():
+    pass
+
+
+nothing()
+'''
+
+'''
+def format_date(*, day: int, month: str) -> str:
+    return f"The date is {day} of {month}"
+
+
+print(format_date(day=15, month="October"))
+print(format_date(month="October", day=15))
+'''
+
+
+def custom_greeting(*, name: str, greeting: str = "Hello") -> str:
+    return f"{greeting}, {name}"
+
+
+print(custom_greeting(name="John", greeting="Good morning"))
+print(custom_greeting(name="John"))
