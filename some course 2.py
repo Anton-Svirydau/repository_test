@@ -1,5 +1,4 @@
-# list
-
+# list, index
 """"""
 
 '''
@@ -86,5 +85,27 @@ joined_string = " ".join(my_list)
 print(joined_string)
 '''
 
+'''
 my_list = [3, 6, 2, 4, 1, 187, 21]
 print(max(my_list), min(my_list), sum(my_list))
+'''
+
+'''
+fruits = ["banana", "apple", "cherry", "watermelon"]
+print(fruits[0], fruits[-4], fruits[3], fruits[-1], fruits[-3], fruits[-2])
+
+fruits[0] = "pineapple"
+fruits[1], fruits[2] = fruits[2], fruits[1]
+print(fruits)
+'''
+
+'''
+numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(numbers[0:5])
+print(numbers[0:10])  # numbers[0:len(numbers)] / numbers[:]
+print(numbers[0:10:2])  # numbers[::2]
+
+new_numbers = numbers[0:5]  # numbers[:5]
+print(new_numbers)
+print(new_numbers[::-1])
+'''
