@@ -115,6 +115,7 @@ person = person | additional_person_info
 print(person)
 '''
 
+'''
 """
 average_marks = []
 best_students = []
@@ -167,3 +168,4 @@ def get_best_students(*, students: list[dict]) -> list[dict]:
 
 
 print(get_best_students(students=students_1))
+'''
