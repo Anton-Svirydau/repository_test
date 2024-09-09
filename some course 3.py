@@ -1,4 +1,4 @@
-# tuple, dict
+# tuple, dict, args, **kwargs
 
 """"""
 
@@ -169,3 +169,94 @@ def get_best_students(*, students: list[dict]) -> list[dict]:
 
 print(get_best_students(students=students_1))
 '''
+
+'''
+def add_all(*args):
+    print(args)
+    print(type(args))
+
+
+add_all(1, 2, 3)
+
+
+def add_all_1(*args):
+    summary = 0
+    for num in args:
+        summary += num
+    return summary
+
+
+print(add_all_1(1, 2, 3, 4, 5))
+
+values = [1, 2, 3, 4, 5]
+other_values = [6, 7, 8, 9, 10]
+
+print(add_all_1(*values, *other_values))
+'''
+
+'''
+def introduce(**kwargs):
+    print(kwargs)
+    print(type(kwargs))
+
+
+introduce(name="John", age=30, city="New York")
+
+
+def introduce_1(**kwargs):
+    for key, value in kwargs.items():
+        print(key)
+        print(value)
+
+
+introduce_1(name="John", age=30, city="New York")
+
+person = {
+    "city": "New York",
+    "age": 30,
+    "name": "John"
+}
+
+introduce_1(**person)
+'''
+
+'''
+def func_with_all_arguments(x: int, y: int, *args, value: int = 6, **kwargs):
+    print(x, y)
+    print(args)
+    print(value)
+    print(kwargs)
+
+
+person = {
+    "city": "New York",
+    "age": 30,
+    "name": "John"
+}
+
+func_with_all_arguments(1, 2, 3, 4, 5, **person)
+'''
+
+
+def modify_dict(old_dict: dict, **kwargs) -> tuple[dict, bool]:
+    is_modified = False
+
+    for key, value in kwargs.items():
+        if old_dict.get(key) != value:
+            old_dict[key] = value
+            is_modified = True
+
+    return old_dict, is_modified
+
+
+product = {"id": 1, "name": "Laptop", "price": 999.99}
+
+structure_0 = modify_dict(old_dict=product, name="Laptop")
+
+print(structure_0)
+print(type(structure_0))
+
+prod, was_modify = modify_dict(old_dict=product, in_stock=True)
+
+print(prod)
+print(was_modify)
