@@ -1,5 +1,5 @@
-# tuple, dict, args, **kwargs
-
+# tuple, dict, args, **kwargs, json
+import json
 """"""
 
 '''
@@ -237,7 +237,7 @@ person = {
 func_with_all_arguments(1, 2, 3, 4, 5, **person)
 '''
 
-
+'''
 def modify_dict(old_dict: dict, **kwargs) -> tuple[dict, bool]:
     is_modified = False
 
@@ -260,3 +260,22 @@ prod, was_modify = modify_dict(old_dict=product, in_stock=True)
 
 print(prod)
 print(was_modify)
+'''
+
+'''
+book = {
+    "title": "1984",
+    "author": "George Orwell",
+    "isbn": "978-0451524935",
+    "uuid": "a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11",
+    "count": 30,
+    "genres": ["dystopia"]
+}
+
+json_string = json.dumps(book)
+
+print(type(json_string))
+print(json_string)
+
+# read_book = json.loads(json_string)
+'''
