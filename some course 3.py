@@ -262,7 +262,6 @@ print(prod)
 print(was_modify)
 '''
 
-'''
 book = {
     "title": "1984",
     "author": "George Orwell",
@@ -278,4 +277,3 @@ print(type(json_string))
 print(json_string)
 
 # read_book = json.loads(json_string)
-'''
