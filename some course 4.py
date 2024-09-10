@@ -1,4 +1,6 @@
 """"""
+import requests
+
 import random
 from math_operations import add
 from math_operations import subtract as sub
