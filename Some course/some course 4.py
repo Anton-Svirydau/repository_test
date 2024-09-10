@@ -1,4 +1,4 @@
-# set
+# set, sorted, filter, lambda
 
 
 """"""
@@ -114,6 +114,7 @@ print(type(filtered_numbers))
 print(filtered_numbers)
 '''
 
+'''
 people = [
     {"name": "Alice", "age": 17},
     {"name": "Bob", "age": 30},
@@ -128,3 +129,40 @@ def is_adult(person: dict) -> bool:
 
 filtered_people = list(filter(is_adult, people))
 print(filtered_people)
+'''
+
+'''
+def sort_by_len(element: str) -> int:
+    return len(element)
+
+
+sort_by_len_lambda = lambda element: len(element)
+
+print(sort_by_len("banana"))
+print(sort_by_len_lambda("banana"))
+'''
+
+'''
+fruits = ["banana", "apple", "cherry", "date"]
+
+"""
+sorted_fruits = sorted(fruits, key=lambda element: len(element))
+
+print(sorted_fruits)
+"""
+
+longest_word = max(fruits, key=lambda element: len(element))
+
+print(longest_word)
+'''
+
+people = [
+    {"name": "Alice", "age": 25},
+    {"name": "Charlie", "age": 20},
+    {"name": "Bob", "age": 20},
+    {"name": "Diana", "age": 30},
+]
+
+youngest_man = min(people, key=lambda element: (element["age"], element["name"]))
+
+print(youngest_man)
