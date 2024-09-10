@@ -37,6 +37,7 @@ squares = {x ** 2 for x in range(1, 10)}
 print(squares)
 '''
 
+'''
 # print({1, 2, 3, 3} == {3, 2, 1})
 
 numbers = [1, 2, 2, 3, 4, 4, 4, 5, 6, 6, 7]
@@ -53,3 +54,77 @@ print(unique_numbers)
 unique_numbers = list(set(numbers))
 print(unique_numbers)
 print(type(unique_numbers))
+'''
+
+'''
+fruits = ["banana", "apple", "cherry", "date"]
+# sorted_fruits = sorted(fruits)
+# sorted_fruits = sorted(fruits, reverse=True)
+
+# print(sorted_fruits)
+# print(fruits)
+
+
+def sort_by_lem(element: str) -> int:
+    return len(element)
+
+
+sorted_fruits = sorted(fruits, key=sort_by_lem)
+
+print(sorted_fruits)
+'''
+
+'''
+people = [
+    {"name": "Alice", "age": 25},
+    {"name": "Bob", "age": 20},
+    {"name": "Diana", "age": 30},
+    {"name": "Charlie", "age": 30},
+]
+
+"""
+def sort_by_age(person: dict) -> int:
+    return person["age"]
+
+
+sorting = sorted(people, key=sort_by_age)
+print(sorting)
+"""
+
+
+def sort_by_age_name(element: dict) -> tuple[int, str]:
+    return element["age"], element["name"]
+
+
+sorted_people = sorted(people, key=sort_by_age_name)
+
+print(sorted_people)
+'''
+
+'''
+def is_even(n: int) -> bool:
+    return n % 2 == 0
+
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+filtered_numbers = list(filter(is_even, numbers))
+
+print(type(filtered_numbers))
+print(filtered_numbers)
+'''
+
+people = [
+    {"name": "Alice", "age": 17},
+    {"name": "Bob", "age": 30},
+    {"name": "Diana", "age": 19},
+    {"name": "Charlie", "age": 40},
+]
+
+
+def is_adult(person: dict) -> bool:
+    return person["age"] >= 18
+
+
+filtered_people = list(filter(is_adult, people))
+print(filtered_people)
