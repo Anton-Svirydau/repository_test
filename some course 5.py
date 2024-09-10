@@ -21,6 +21,7 @@ price = float(price_object["price"])
 print(price)
 '''
 
+'''
 bitcoin_prices = []
 
 for i in range(30):
@@ -33,3 +34,18 @@ print(bitcoin_prices)
 print(len(bitcoin_prices))
 print(max(bitcoin_prices))
 print(min(bitcoin_prices))
+'''
+
+'''
+response = requests.get(url, params={'symbol': 'ETHUSDT'})
+
+price = float(response.json()['price'])
+
+print(price)
+'''
+
+response = requests.get('https://api.binance.com/api/v3/ticker/price')
+
+for ticker in response.json():
+    if ticker['symbol'] == 'ETHUSDT':
+        print(ticker['price'])
