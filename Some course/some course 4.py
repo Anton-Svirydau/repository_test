@@ -1,4 +1,4 @@
-# set, sorted, filter, lambda
+# set, sorted, filter, lambda, exceptions
 
 
 """"""
@@ -156,6 +156,7 @@ longest_word = max(fruits, key=lambda element: len(element))
 print(longest_word)
 '''
 
+'''
 people = [
     {"name": "Alice", "age": 25},
     {"name": "Charlie", "age": 20},
@@ -166,3 +167,21 @@ people = [
 youngest_man = min(people, key=lambda element: (element["age"], element["name"]))
 
 print(youngest_man)
+'''
+
+
+def find_average(*, numbers: list) -> float:
+    return sum(numbers) / len(numbers)
+
+
+try:
+    print(find_average(numbers=[1, 2, 3]))
+except ZeroDivisionError:
+    print("The list is empty")
+
+try:
+    print(find_average(numbers=[]))
+except ZeroDivisionError as error:
+    print(f"Something goes wrong: {error}")
+
+print("We are here")
