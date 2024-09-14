@@ -140,6 +140,6 @@ def fight(*, character_1: Character, character_2: Character) -> None:
 
 
 ork_1 = Ork(level=3)
-elf_1 = Elf(level=5)
+elf_1 = Elf(level=6)
 
 fight(character_1=ork_1, character_2=elf_1)
