@@ -118,7 +118,7 @@ class Ork(Character):
     def defence(self) -> int:
         defence = super().defence
         if self.health_points < 50:
-            defence *= 3
+            defence *= 2
 
         return defence
 
@@ -154,6 +154,6 @@ def fight(*, character_1: Character, character_2: Character) -> None:
 
 
 ork_1 = Ork(level=1)
-elf_1 = Elf(level=1)
+elf_1 = Elf(level=2)
 
 fight(character_1=ork_1, character_2=elf_1)
