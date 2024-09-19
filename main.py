@@ -798,7 +798,7 @@ def good_students(students):
 good_students(students)
 '''
 
-
+'''
 def slicer(any_tuple, element):
     if element in any_tuple:
         if any_tuple.count(element) > 1:
@@ -809,3 +809,27 @@ def slicer(any_tuple, element):
             return any_tuple[any_tuple.index(element):]
     else:
         return ()
+'''
+
+
+def binary_search(list, start_element, key):
+    end_element = len(list) - 1
+    while start_element <= end_element:
+        middle_element = start_element + (end_element - start_element) // 2
+        if list[middle_element] == key:
+            return middle_element
+        elif list[middle_element] < key:
+            start_element = middle_element + 1
+        else:
+            end_element = middle_element - 1
+    return -1
+
+
+sequence = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+            11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+            21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
+
+find_element = 24
+
+result = binary_search(list=sequence, start_element=0, key=find_element)
+print(result)
