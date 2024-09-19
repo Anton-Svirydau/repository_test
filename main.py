@@ -812,6 +812,7 @@ def slicer(any_tuple, element):
 '''
 
 
+'''
 def binary_search(list, start_element, key):
     end_element = len(list) - 1
     while start_element <= end_element:
@@ -833,3 +834,28 @@ find_element = 24
 
 result = binary_search(list=sequence, start_element=0, key=find_element)
 print(result)
+'''
+
+
+def binary_search(list, item):
+    low = 0
+    high = len(list) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        guess = list[mid]
+        if guess == item:
+            return mid
+        if guess > item:
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return "No item in list"
+
+
+my_list = [1, 3, 5, 7, 9, 11, 13, 14, 15, 17, 19, 21]
+
+result_1 = binary_search(my_list, 17)
+result_2 = binary_search(my_list, 12)
+print(result_1)
+print(result_2)
