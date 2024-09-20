@@ -836,7 +836,7 @@ result = binary_search(list=sequence, start_element=0, key=find_element)
 print(result)
 '''
 
-
+'''
 def binary_search(list, item):
     low = 0
     high = len(list) - 1
@@ -859,3 +859,21 @@ result_1 = binary_search(my_list, 17)
 result_2 = binary_search(my_list, 12)
 print(result_1)
 print(result_2)
+'''
+
+
+def sort_by_len(element: str) -> int:
+    return len(element)
+
+
+sort_by_len_lambda = lambda element: len(element)
+print(sort_by_len("banana"))
+print(sort_by_len_lambda("banana"))
+
+
+fruits = ["banana", "apple", "cherry", "date"]
+sorted_fruits = sorted(fruits, key=lambda element: len(element))
+
+fruits = ["apple", "banana", "cherry", "date"]
+longest_word = max(fruits, key=lambda x: len(x))
+print(longest_word)
