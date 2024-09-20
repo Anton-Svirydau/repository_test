@@ -861,7 +861,7 @@ print(result_1)
 print(result_2)
 '''
 
-
+'''
 def sort_by_len(element: str) -> int:
     return len(element)
 
@@ -877,3 +877,27 @@ sorted_fruits = sorted(fruits, key=lambda element: len(element))
 fruits = ["apple", "banana", "cherry", "date"]
 longest_word = max(fruits, key=lambda x: len(x))
 print(longest_word)
+'''
+
+
+def is_even(n):
+    return n % 2 == 0
+
+
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+filtered_numbers = list(filter(is_even, numbers))
+print(filtered_numbers)
+
+
+def is_adult(person):
+    return person['age'] >= 18
+
+
+people = [
+    {"name": "Alice", "age": 17},
+    {"name": "Bob", "age": 30},
+    {"name": "Charlie", "age": 19},
+    {"name": "David", "age": 40}
+]
+filtered_people = list(filter(is_adult, people))
+print(filtered_people)
