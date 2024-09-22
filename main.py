@@ -879,7 +879,7 @@ longest_word = max(fruits, key=lambda x: len(x))
 print(longest_word)
 '''
 
-
+'''
 def is_even(n):
     return n % 2 == 0
 
@@ -901,3 +901,15 @@ people = [
 ]
 filtered_people = list(filter(is_adult, people))
 print(filtered_people)
+'''
+
+
+def insertion_sort(unsorted, n):
+    for i in range(1, n):
+        val = unsorted[i].value
+        hole = i
+        while hole > 0 and unsorted[hole - 1].value > val:
+            unsorted[hole].value = unsorted[hole - 1].value
+            hole -= 1
+        unsorted[hole].value = val
+        
