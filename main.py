@@ -903,7 +903,7 @@ filtered_people = list(filter(is_adult, people))
 print(filtered_people)
 '''
 
-
+'''
 def insertion_sort(unsorted, n):
     for i in range(1, n):
         val = unsorted[i].value
@@ -912,4 +912,33 @@ def insertion_sort(unsorted, n):
             unsorted[hole].value = unsorted[hole - 1].value
             hole -= 1
         unsorted[hole].value = val
-        
+'''
+
+
+def divide(self, unsorted, lower, upper):
+    if upper <= lower:
+        return
+    mid = (lower + upper) // 2
+    divide(unsorted, lower, mid)
+    divide(unsorted, mid + 1, upper)
+    merge(unsorted, lower, mid, mid + 1, upper)
+
+
+def merge(unsorted, l_lower, l_upper, r_lower, r_upper):
+    i, j = l_lower, r_lower
+    temp = []
+    while i <= l_upper and j <= r_upper:
+        if unsorted[i].value <= unsorted[j].value:
+            temp.append(unsorted[i])
+            i += 1
+        else:
+            temp.append(unsorted[j])
+            j += 1
+    while i <= l_upper:
+        temp.append(unsorted[i])
+        i += 1
+    while j <= r_upper:
+        temp.append(unsorted[j])
+        j += 1
+    for y, k in enumerate(range(l_lower, r_upper + 1)):
+        unsorted[k] = temp[y]
