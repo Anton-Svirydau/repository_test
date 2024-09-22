@@ -914,7 +914,7 @@ def insertion_sort(unsorted, n):
         unsorted[hole].value = val
 '''
 
-
+'''
 def divide(self, unsorted, lower, upper):
     if upper <= lower:
         return
@@ -942,3 +942,23 @@ def merge(unsorted, l_lower, l_upper, r_lower, r_upper):
         j += 1
     for y, k in enumerate(range(l_lower, r_upper + 1)):
         unsorted[k] = temp[y]
+'''
+
+
+def quick_sort(self, unsorted, start, end):
+    if start >= end:
+        return
+    i_pivot = partition(unsorted, start, end - 1)
+    quick_sort(unsorted, start, i_pivot)
+    quick_sort(unsorted, i_pivot + 1, end)
+
+
+def partition(self, unsorted, start, end):
+    pivot = unsorted[end]
+    i_pivot = start
+    for i in range(start, end):
+        if unsorted[i].value <= pivot.value:
+            swap(unsorted, i, i_pivot)
+            i_pivot += 1
+    swap(unsorted, i_pivot, end)
+    return i_pivot
