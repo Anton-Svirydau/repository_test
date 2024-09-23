@@ -944,7 +944,7 @@ def merge(unsorted, l_lower, l_upper, r_lower, r_upper):
         unsorted[k] = temp[y]
 '''
 
-
+'''
 def quick_sort(self, unsorted, start, end):
     if start >= end:
         return
@@ -962,3 +962,16 @@ def partition(self, unsorted, start, end):
             i_pivot += 1
     swap(unsorted, i_pivot, end)
     return i_pivot
+'''
+
+
+def bubble_sort(self, unsorted, n):
+    for i in range(0, n - 1):
+
+        swapped = False
+        for j in range(0, n - 1 - i):
+            if unsorted[j].value > unsorted[j + 1].value:
+                swap(unsorted, j, j + 1)
+                swapped = True
+        if not swapped:
+            break
