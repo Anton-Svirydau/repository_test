@@ -914,7 +914,7 @@ def insertion_sort(unsorted, n):
         unsorted[hole].value = val
 '''
 
-'''
+'''    
 def divide(self, unsorted, lower, upper):
     if upper <= lower:
         return
@@ -945,6 +945,12 @@ def merge(unsorted, l_lower, l_upper, r_lower, r_upper):
 '''
 
 '''
+def swap(arr, a, b):
+    temp = arr[a]
+    arr[a] = arr[b]
+    arr[b] = temp
+    
+    
 def quick_sort(self, unsorted, start, end):
     if start >= end:
         return
@@ -963,6 +969,12 @@ def partition(self, unsorted, start, end):
     swap(unsorted, i_pivot, end)
     return i_pivot
 '''
+
+
+def swap(arr, a, b):
+    temp = arr[a]
+    arr[a] = arr[b]
+    arr[b] = temp
 
 
 def bubble_sort(self, unsorted, n):
