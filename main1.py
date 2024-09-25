@@ -1,4 +1,4 @@
-# This is a sample Python script.
+import datetime
 
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
@@ -64,6 +64,7 @@ def bubble_sort(self, unsorted, n):
 """
 
 
+'''
 def divide(self, unsorted, lower, upper):
 
     if upper <= lower:
@@ -101,3 +102,42 @@ def merge(unsorted, l_lower, l_upper, r_lower, r_upper):
 
     for y, k in enumerate(range(l_lower, r_upper + 1)):
         unsorted[k] = temp[y]
+'''
+
+
+utc_time = datetime.datetime.now(datetime.UTC)
+print(utc_time)
+
+current_datetime = datetime.datetime.now()
+print(current_datetime)
+print(current_datetime.isoformat())
+print(current_datetime.year)
+print(current_datetime.month)
+print(current_datetime.day)
+print(current_datetime.hour)
+print(current_datetime.minute)
+print(current_datetime.second)
+print(current_datetime.microsecond)
+
+some_datetime = datetime.datetime(year=2021, month=5, day=1, hour=12, minute=30, second=15, microsecond=123456)
+print(some_datetime)
+
+current_date = datetime.date.today()
+print(current_date)
+
+current_datetime = datetime.datetime.now()
+current_date = current_datetime.date()
+print(current_date)
+
+
+day_ago = current_datetime - datetime.timedelta(days=1)
+print(day_ago)
+
+
+current_datetime = datetime.datetime.now()
+current_datetime.strftime("%A, %d %B %Y")
+
+isoformat = "2023-08-07T20:15:30.384294"
+my_datetime = datetime.datetime.fromisoformat(isoformat)
+print(type(my_datetime))
+print(my_datetime)
