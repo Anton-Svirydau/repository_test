@@ -186,7 +186,7 @@ def get_price_by_ticker(*, ticker: str) -> float:
 bot.infinity_polling()
 '''
 
-
+'''
 def shift(lst, steps):
     if steps < 0:
         steps = abs(steps)
@@ -205,3 +205,23 @@ print(nums)
 
 shift(nums, 3)
 print(nums)
+'''
+
+while True:
+    s = input('(+, -, *, /): ')
+    if s == '0':
+        break
+    if s in ('+', '-', '*', '/'):
+        a = float(input('a = '))
+        b = float(input('b = '))
+        if s == '+':
+            print('%.2f' % (a + b))
+        elif s == '-':
+            print('%.2f' % (a - b))
+        elif s == '*':
+            print('%.2f' % (a * b))
+        elif s == '/':
+            if b != 0:
+                print('%.2f' % (a / b))
+            else:
+                print('no / 0!')
