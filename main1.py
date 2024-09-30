@@ -252,6 +252,7 @@ print("A =", a)
 print("B =", b)
 '''
 
+'''
 a = [randint(0, 99) for j in range(10)]
 print("A =", a)
 
@@ -261,6 +262,19 @@ while i >= 0:
     if 35 < a[i] < 65:
         b.insert(0, a.pop(i))
     i -= 1
+
+print("A =", a)
+print("B =", b)
+'''
+
+a = [randint(0, 99) for j in range(10)]
+print("A =", a)
+
+b = []
+
+for i in range(len(a)-1, -1, -1):
+    if 35 < a[i] < 65:
+        b.insert(0, a.pop(i))
 
 print("A =", a)
 print("B =", b)
