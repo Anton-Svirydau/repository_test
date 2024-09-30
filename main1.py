@@ -1,5 +1,5 @@
 import datetime
-
+import random
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
@@ -207,6 +207,7 @@ shift(nums, 3)
 print(nums)
 '''
 
+'''
 while True:
     s = input('(+, -, *, /): ')
     if s == '0':
@@ -225,3 +226,24 @@ while True:
                 print('%.2f' % (a / b))
             else:
                 print('no / 0!')
+'''
+
+a = []
+for i in range(10):
+    n = round(random.random() * 100)
+    a.append(n)
+print("A =", a)
+
+b = []
+i = 0
+length = len(a)
+while i < length:
+    if 35 < a[i] < 65:
+        b.append(a[i])
+        del a[i]
+        length = length - 1
+    else:
+        i += 1
+
+print("A =", a)
+print("B =", b)
