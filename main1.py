@@ -1,5 +1,7 @@
 import datetime
 import random
+from random import randint
+
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
@@ -228,6 +230,7 @@ while True:
                 print('no / 0!')
 '''
 
+'''
 a = []
 for i in range(10):
     n = round(random.random() * 100)
@@ -244,6 +247,20 @@ while i < length:
         length = length - 1
     else:
         i += 1
+
+print("A =", a)
+print("B =", b)
+'''
+
+a = [randint(0, 99) for j in range(10)]
+print("A =", a)
+
+b = []
+i = len(a) - 1
+while i >= 0:
+    if 35 < a[i] < 65:
+        b.insert(0, a.pop(i))
+    i -= 1
 
 print("A =", a)
 print("B =", b)
