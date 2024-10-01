@@ -1,6 +1,6 @@
 # set, sorted, filter, lambda, exceptions
-
-
+import datetime
+import random
 """"""
 
 
@@ -169,6 +169,9 @@ youngest_man = min(people, key=lambda element: (element["age"], element["name"])
 print(youngest_man)
 '''
 
+# utc_time = datetime.datetime.now(datetime.UTC)
+my_list = [1, 2, 3, 4, 5]
+
 
 def find_average(*, numbers: list) -> float:
     return sum(numbers) / len(numbers)
@@ -184,4 +187,4 @@ try:
 except ZeroDivisionError as error:
     print(f"Something goes wrong: {error}")
 
-print("We are here")
+print("We are here", random.choice(my_list))
