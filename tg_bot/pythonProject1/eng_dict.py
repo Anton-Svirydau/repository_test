@@ -79,7 +79,7 @@ lesson_3 = {
     "большой": "large",
     "левый, налево": "left",
     "слева": "on the left",
-    "смотреть (на) / ... (at)": "look",
+    "смотреть": "look",
     "означать, значить": "mean",
     "север": "north",
     "наш": "our",
@@ -118,7 +118,7 @@ lesson_4 = {
     "слушать": "listen",
     "жить": "live",
     "близко, близ": "near",
-    "почти": "nearly",
+    "почти, около": "nearly",
     "ночь": "night",
     "океан": "ocean",
     "другой": "other",
@@ -132,3 +132,58 @@ lesson_4 = {
     "широкий": "wide",
     "с": "with"
 }
+
+lesson_5 = {
+    "воздух": "air",
+    "почти, едва не": "almost",
+    "любой": "any",
+    "док": "dock",
+    "портовый рабочий": "docker",
+    "каждый": "each",
+    "летать": "fly",
+    "для": "for",
+    "от, из": "from",
+    "ворота, врата": "gate",
+    "уходить, идти, уезжать, направляться": "go",
+    "добрый": "kind",
+    "род, сорт, класс": "kind",
+    "линия": "line",
+    "многие": "many",
+    "рот, устье (реки)": "mouth",
+    "только": "only",
+    "или": "or",
+    "место": "place",
+    "железная дорога": "railway",
+    "судно, корабль": "ship",
+    "маленький": "small",
+    "особый, специальный": "special",
+    "там, туда": "there",
+    "переводить": "translate",
+    "затем": "then",
+    "вверх": "up",
+    "хотеть, желать": "wish",
+    "когда": "when",
+    "который": "which",
+    "работа, работать": "work",
+    "рабочий, работник": "worker",
+    "мир": "world"
+}
+
+dict_list = [lesson_1, lesson_2, lesson_3, lesson_4, lesson_5]
+user_input = ""
+
+while user_input != "1":
+    random_dict = random.choice(dict_list)
+    random_key = random.choice(list(random_dict.keys()))
+
+    # Выводим случайный ключ
+    print(f"Переведите слово: {random_key}")
+
+    # Получаем ввод пользователя
+    user_input = input("Ваш ответ: ")
+
+    # Проверяем ответ пользователя
+    if user_input.lower() == random_dict[random_key].lower():
+        print("Правильно")
+    else:
+        print(f"Неправильно, правильный ответ: {random_dict[random_key]}")
