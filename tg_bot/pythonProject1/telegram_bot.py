@@ -3,11 +3,6 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 import random
 
 TOKEN = "7519131220:AAEUsqn2XovEMu8b5pEc197V-SBQAK4M2Wo"
-list_start = [
-    "Words",
-    "Tests"
-]
-
 
 bot = TeleBot(TOKEN)
 
@@ -181,10 +176,10 @@ dict_list = [lesson_1, lesson_2, lesson_3, lesson_4, lesson_5]
 
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
-    markup = ReplyKeyboardMarkup(row_width=2)
-    for list_start_button in list_start:
-        item_button = list_start_button
-        markup.add(item_button)
+    markup = ReplyKeyboardMarkup(row_width=3)
+    markup.add("Rules")
+    markup.add("Words")
+    markup.add("Tests")
     bot.send_message(message.chat.id, "Choose one", reply_markup=markup)
 
 
