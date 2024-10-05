@@ -183,12 +183,12 @@ def send_welcome(message):
     bot.send_message(message.chat.id, "Choose one", reply_markup=markup)
 
 
-# @bot.message_handler(func=lambda message: message.text in list_start)
-# def send_status_button(message):
-#     if message.text == "Words":
-#         bot.send_message(message.chat.id, "This option is currently unavailable.")
-#     if message.text == "Tests":
-#         bot.send_message(message.chat.id, "This option is currently unavailable.")
+@bot.message_handler(func=lambda message: message.text in dict_list)
+def send_status_button(message):
+    if message.text == "Words":
+        bot.send_message(message.chat.id, "This option is currently unavailable.")
+    if message.text == "Tests":
+        bot.send_message(message.chat.id, "This option is currently unavailable.")
 
 
 bot.infinity_polling()
