@@ -187,13 +187,17 @@ def send_welcome(message):
 @bot.message_handler(content_types=["text"])
 def handle_text(message):
     answer = ''
-    if message.text.strip() == 'Rules':
+    markup = ReplyKeyboardMarkup(row_width=3)
+    if message.text == 'Rules':
         answer = "This option is currently unavailable. 1"
-    elif message.text.strip() == 'Words':
+    elif message.text == 'Words':
         answer = "This option is currently unavailable. 2"
-    elif message.text.strip() == 'Tests':
+        markup = ReplyKeyboardMarkup(row_width=2)
+        markup.add("Next")
+        markup.add("End")
+    elif message.text == 'Tests':
         answer = "This option is currently unavailable. 3"
-    bot.send_message(message.chat.id, answer)
+    bot.send_message(message.chat.id, answer, reply_markup=markup)
 
 # @bot.message_handler(func=lambda message: message.text in dict_list)
 # def send_status_button(message):
