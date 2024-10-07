@@ -187,6 +187,7 @@ def send_welcome(message):
 
 global_random_answer = '-1'
 
+
 @bot.message_handler(content_types=["text"])
 def initial_choice(message):
     markup = ReplyKeyboardMarkup(row_width=3)
@@ -206,10 +207,13 @@ def initial_choice(message):
 
 @bot.message_handler(content_types=["text"])
 def words_test_choice(message):
+    markup = ReplyKeyboardMarkup(row_width=2)
+    markup.add("Once again")
+    markup.add("End")
     if message.text.lower() == global_random_answer.lower():
-        bot.send_message(message.chat.id, "You are right")
+        bot.send_message(message.chat.id, "You are right", reply_markup=markup)
     else:
-        bot.send_message(message.chat.id, "No, bro, are you kidding?")
+        bot.send_message(message.chat.id, "No, bro, are you kidding?", reply_markup=markup)
 
 
 # @bot.message_handler(func=lambda message: message.text in dict_list)
