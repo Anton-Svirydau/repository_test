@@ -185,19 +185,31 @@ def send_welcome(message):
     bot.send_message(message.chat.id, "Hi, dude, choose one", reply_markup=markup)
 
 
+global_random_answer = '-1'
+
 @bot.message_handler(content_types=["text"])
-def handle_text(message):
-    answer = ''
+def initial_choice(message):
     markup = ReplyKeyboardMarkup(row_width=3)
     if message.text == 'Rules':
-        answer = "This option is currently unavailable. 1"
+        bot.send_message(message.chat.id, "This option is currently unavailable. 1", reply_markup=markup)
     elif message.text == 'Words':
-        random_word = test_word()
+        random_word, random_answer = test_word()
+        global global_random_answer
+        global_random_answer = random_answer
         answer = f"Translate: {random_word}"
         markup = types.ReplyKeyboardRemove()
+        answer_to_user = bot.send_message(message.chat.id, answer, reply_markup=markup)
+        bot.register_next_step_handler(answer_to_user, words_test_choice)
     elif message.text == 'Tests':
-        answer = "This option is currently unavailable. 3"
-    bot.send_message(message.chat.id, answer, reply_markup=markup)
+        bot.send_message(message.chat.id, "This option is currently unavailable. 3", reply_markup=markup)
+
+
+@bot.message_handler(content_types=["text"])
+def words_test_choice(message):
+    if message.text.lower() == global_random_answer.lower():
+        bot.send_message(message.chat.id, "You are right")
+    else:
+        bot.send_message(message.chat.id, "No, bro, are you kidding?")
 
 
 # @bot.message_handler(func=lambda message: message.text in dict_list)
