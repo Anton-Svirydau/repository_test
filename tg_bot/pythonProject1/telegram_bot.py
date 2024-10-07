@@ -1,6 +1,7 @@
 from telebot import TeleBot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 import random
+from telebot import types
 
 TOKEN = "7519131220:AAEUsqn2XovEMu8b5pEc197V-SBQAK4M2Wo"
 
@@ -180,15 +181,26 @@ def send_welcome(message):
     markup.add("Rules")
     markup.add("Words")
     markup.add("Tests")
-    bot.send_message(message.chat.id, "Choose one", reply_markup=markup)
+    bot.send_message(message.chat.id, "Hi, dude, choose one", reply_markup=markup)
 
 
-@bot.message_handler(func=lambda message: message.text in dict_list)
-def send_status_button(message):
-    if message.text == "Words":
-        bot.send_message(message.chat.id, "This option is currently unavailable.")
-    if message.text == "Tests":
-        bot.send_message(message.chat.id, "This option is currently unavailable.")
+@bot.message_handler(content_types=["text"])
+def handle_text(message):
+    answer = ''
+    if message.text.strip() == 'Rules':
+        answer = "This option is currently unavailable. 1"
+    elif message.text.strip() == 'Words':
+        answer = "This option is currently unavailable. 2"
+    elif message.text.strip() == 'Tests':
+        answer = "This option is currently unavailable. 3"
+    bot.send_message(message.chat.id, answer)
+
+# @bot.message_handler(func=lambda message: message.text in dict_list)
+# def send_status_button(message):
+#     if message.text == "Words":
+#         bot.send_message(message.chat.id, "This option is currently unavailable.")
+#     if message.text == "Tests":
+#         bot.send_message(message.chat.id, "This option is currently unavailable.")
 
 
 bot.infinity_polling()
