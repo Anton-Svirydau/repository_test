@@ -2,6 +2,7 @@ from telebot import TeleBot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 import random
 from telebot import types
+from eng_dict import test_word
 
 TOKEN = "7519131220:AAEUsqn2XovEMu8b5pEc197V-SBQAK4M2Wo"
 
@@ -191,13 +192,13 @@ def handle_text(message):
     if message.text == 'Rules':
         answer = "This option is currently unavailable. 1"
     elif message.text == 'Words':
-        answer = "This option is currently unavailable. 2"
-        markup = ReplyKeyboardMarkup(row_width=2)
-        markup.add("Next")
-        markup.add("End")
+        random_word = test_word()
+        answer = f"Translate: {random_word}"
+        markup = types.ReplyKeyboardRemove()
     elif message.text == 'Tests':
         answer = "This option is currently unavailable. 3"
     bot.send_message(message.chat.id, answer, reply_markup=markup)
+
 
 # @bot.message_handler(func=lambda message: message.text in dict_list)
 # def send_status_button(message):
