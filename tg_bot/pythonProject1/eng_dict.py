@@ -170,26 +170,31 @@ lesson_5 = {
 }
 
 dict_list = [lesson_1, lesson_2, lesson_3, lesson_4, lesson_5]
-user_input = ""
-
-
-def words_test():
-    user_input = ""
-    while user_input != "stop":
-        random_dict = random.choice(dict_list)
-        random_key = random.choice(list(random_dict.keys()))
-
-        # Выводим случайный ключ
-        print(f"Переведите слово: {random_key}")
-
-        # Получаем ввод пользователя
-        user_input = input("Ваш ответ: ")
-
-        # Проверяем ответ пользователя
-        if user_input.lower() == random_dict[random_key].lower():
-            print("Правильно")
-        else:
-            print(f"Неправильно, правильный ответ: {random_dict[random_key]}")
+# user_input = ""
+#
+#
+# def words_test():
+#     user_input = ""
+#     while user_input != "stop":
+#         random_dict = random.choice(dict_list)
+#         random_key = random.choice(list(random_dict.keys()))
+#
+#         # Выводим случайный ключ
+#         print(f"Переведите слово: {random_key}")
+#
+#         # Получаем ввод пользователя
+#         user_input = input("Ваш ответ: ")
+#
+#         # Проверяем ответ пользователя
+#         if user_input.lower() == random_dict[random_key].lower():
+#             print("Правильно")
+#         else:
+#             print(f"Неправильно, правильный ответ: {random_dict[random_key]}")
 
 
 # words_test()
+
+def test_word():
+    random_dict = random.choice(dict_list)
+    random_key = random.choice(list(random_dict.keys()))
+    return random_key
