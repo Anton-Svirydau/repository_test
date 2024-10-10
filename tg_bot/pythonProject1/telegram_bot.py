@@ -56,6 +56,14 @@ def initial_choice(message):
     elif message.text == 'Tests':
         bot.send_message(message.chat.id, "This option is currently unavailable. 3", reply_markup=markup)
 
+    elif message.text == 'Give up':
+        markup = types.ReplyKeyboardRemove()
+        markup = ReplyKeyboardMarkup(row_width=3)
+        markup.add("Rules")
+        markup.add("Words")
+        markup.add("Tests")
+        bot.send_message(message.chat.id, "Dude, choose one", reply_markup=markup)
+
 
 @bot.message_handler(content_types=["text"])
 def words_test_choice(message):
@@ -65,15 +73,7 @@ def words_test_choice(message):
     if message.text.lower() == global_random_answer.lower():
         bot.send_message(message.chat.id, "You are right", reply_markup=markup)
     else:
-        bot.send_message(message.chat.id, f"No, bro, are you kidding?{global_random_answer}", reply_markup=markup)
-
-
-# @bot.message_handler(func=lambda message: message.text in dict_list)
-# def send_status_button(message):
-#     if message.text == "Words":
-#         bot.send_message(message.chat.id, "This option is currently unavailable.")
-#     if message.text == "Tests":
-#         bot.send_message(message.chat.id, "This option is currently unavailable.")
+        bot.send_message(message.chat.id, f"No, bro, are you kidding? 👉 {global_random_answer}", reply_markup=markup)
 
 
 bot.infinity_polling()
