@@ -62,8 +62,12 @@ def words_test_choice(message):
     markup.add('Once again')
     markup.add('Give up')
     if message.text.lower() == global_random_answer.lower():
+        photo = open('botTrue.png', 'rb')
+        bot.send_photo(message.chat.id, photo)
         bot.send_message(message.chat.id, "You are right", reply_markup=markup)
     else:
+        photo_1 = open('botFalse.png', 'rb')
+        bot.send_photo(message.chat.id, photo_1)
         bot.send_message(message.chat.id, f"No, bro, are you kidding? 👉 {global_random_answer}", reply_markup=markup)
 
 
@@ -73,8 +77,12 @@ def words_test_choice_1(message):
     markup.add('Once again')
     markup.add('Give up')
     if message.text.lower() == global_random_answer_1.lower():
+        photo_2 = open('botTrue.png', 'rb')
+        bot.send_photo(message.chat.id, photo_2)
         bot.send_message(message.chat.id, "You are right", reply_markup=markup)
     else:
+        photo_3 = open('botFalse.png', 'rb')
+        bot.send_photo(message.chat.id, photo_3)
         bot.send_message(message.chat.id, f"No, bro, are you kidding? 👉 {global_random_answer_1}", reply_markup=markup)
 
 
