@@ -38,6 +38,7 @@ def send_welcome(message):
 
 
 global_random_answer = '-1'
+global_random_answer_1 = '-1'
 
 
 @bot.message_handler(content_types=["text"])
@@ -64,6 +65,15 @@ def initial_choice(message):
         markup.add("Tests")
         bot.send_message(message.chat.id, "Dude, choose one", reply_markup=markup)
 
+    elif message.text == 'Once again':
+        random_word_1, random_answer_1 = test_word()
+        global global_random_answer_1
+        global_random_answer_1 = random_answer_1
+        request_answer_1 = f"Translate: {random_word_1}"
+        markup = types.ReplyKeyboardRemove()
+        answer_to_user_1 = bot.send_message(message.chat.id, request_answer_1, reply_markup=markup)
+        bot.register_next_step_handler(answer_to_user_1, words_test_choice_1)
+
 
 @bot.message_handler(content_types=["text"])
 def words_test_choice(message):
@@ -74,6 +84,17 @@ def words_test_choice(message):
         bot.send_message(message.chat.id, "You are right", reply_markup=markup)
     else:
         bot.send_message(message.chat.id, f"No, bro, are you kidding? 👉 {global_random_answer}", reply_markup=markup)
+
+
+@bot.message_handler(content_types=["text"])
+def words_test_choice_1(message):
+    markup = ReplyKeyboardMarkup(row_width=2)
+    markup.add('Once again')
+    markup.add('Give up')
+    if message.text.lower() == global_random_answer_1.lower():
+        bot.send_message(message.chat.id, "You are right", reply_markup=markup)
+    else:
+        bot.send_message(message.chat.id, f"No, bro, are you kidding? 👉 {global_random_answer_1}", reply_markup=markup)
 
 
 bot.infinity_polling()
