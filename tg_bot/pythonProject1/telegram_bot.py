@@ -39,6 +39,8 @@ def initial_choice(message):
         bot.send_message(message.chat.id, "This option is currently unavailable. 3", reply_markup=markup)
 
     elif message.text == 'Give up':
+        photo_2 = open('botSurrender.jpg', 'rb')
+        bot.send_photo(message.chat.id, photo_2)
         markup = types.ReplyKeyboardRemove()
         markup = ReplyKeyboardMarkup(row_width=3)
         markup.add("Rules")
@@ -77,12 +79,12 @@ def words_test_choice_1(message):
     markup.add('Once again')
     markup.add('Give up')
     if message.text.lower() == global_random_answer_1.lower():
-        photo_2 = open('botTrue.png', 'rb')
-        bot.send_photo(message.chat.id, photo_2)
+        photo = open('botTrue.png', 'rb')
+        bot.send_photo(message.chat.id, photo)
         bot.send_message(message.chat.id, "You are right", reply_markup=markup)
     else:
-        photo_3 = open('botFalse.png', 'rb')
-        bot.send_photo(message.chat.id, photo_3)
+        photo_1 = open('botFalse.png', 'rb')
+        bot.send_photo(message.chat.id, photo_1)
         bot.send_message(message.chat.id, f"No, bro, are you kidding? 👉 {global_random_answer_1}", reply_markup=markup)
 
 
