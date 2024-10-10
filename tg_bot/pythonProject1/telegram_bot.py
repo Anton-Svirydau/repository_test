@@ -81,7 +81,7 @@ def words_test_choice_1(message):
     if message.text.lower() == global_random_answer_1.lower():
         photo = open('botTrue.png', 'rb')
         bot.send_photo(message.chat.id, photo)
-        bot.send_message(message.chat.id, "You are right", reply_markup=markup)
+        bot.send_message(message.chat.id, "You are right 🎉", reply_markup=markup)
     else:
         photo_1 = open('botFalse.png', 'rb')
         bot.send_photo(message.chat.id, photo_1)
