@@ -9,25 +9,6 @@ TOKEN = "7519131220:AAEUsqn2XovEMu8b5pEc197V-SBQAK4M2Wo"
 bot = TeleBot(TOKEN)
 
 
-# def words_test():
-#     user_input = ""
-#     while user_input != "1":
-#         random_dict = random.choice(dict_list)
-#         random_key = random.choice(list(random_dict.keys()))
-#
-#         # Выводим случайный ключ
-#         print(f"Переведите слово: {random_key}")
-#
-#         # Получаем ввод пользователя
-#         user_input = input("Ваш ответ: ")
-#
-#         # Проверяем ответ пользователя
-#         if user_input.lower() == random_dict[random_key].lower():
-#             print("Правильно")
-#         else:
-#             print(f"Неправильно, правильный ответ: {random_dict[random_key]}")
-
-
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
     markup = ReplyKeyboardMarkup(row_width=3)
