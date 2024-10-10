@@ -12,9 +12,7 @@ bot = TeleBot(TOKEN)
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
     markup = ReplyKeyboardMarkup(row_width=3)
-    markup.add("Rules")
-    markup.add("Words")
-    markup.add("Tests")
+    markup.add("Rules", "Words", "Tests")
     bot.send_message(message.chat.id, "Hi, dude, choose one", reply_markup=markup)
 
 
@@ -43,9 +41,7 @@ def initial_choice(message):
         bot.send_photo(message.chat.id, photo_2)
         markup = types.ReplyKeyboardRemove()
         markup = ReplyKeyboardMarkup(row_width=3)
-        markup.add("Rules")
-        markup.add("Words")
-        markup.add("Tests")
+        markup.add("Rules", "Words", "Tests")
         bot.send_message(message.chat.id, "Dude, choose one", reply_markup=markup)
 
     elif message.text == 'Once again':
@@ -61,8 +57,7 @@ def initial_choice(message):
 @bot.message_handler(content_types=["text"])
 def words_test_choice(message):
     markup = ReplyKeyboardMarkup(row_width=2)
-    markup.add('Once again')
-    markup.add('Give up')
+    markup.add('Once again', 'Give up')
     if message.text.lower() == global_random_answer.lower():
         photo = open('botTrue.png', 'rb')
         bot.send_photo(message.chat.id, photo)
@@ -76,8 +71,7 @@ def words_test_choice(message):
 @bot.message_handler(content_types=["text"])
 def words_test_choice_1(message):
     markup = ReplyKeyboardMarkup(row_width=2)
-    markup.add('Once again')
-    markup.add('Give up')
+    markup.add('Once again', 'Give up')
     if message.text.lower() == global_random_answer_1.lower():
         photo = open('botTrue.png', 'rb')
         bot.send_photo(message.chat.id, photo)
