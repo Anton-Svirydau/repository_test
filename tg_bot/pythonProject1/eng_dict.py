@@ -261,56 +261,56 @@ dict_list = [lesson_1, lesson_2, lesson_3, lesson_4, lesson_5, lesson_6, lesson_
 # user_input = ""
 
 lesson_1_list = [
-    ["и", "and"],
-    ["яблоко", "apple"],
-    ["лампа", "lamp"],
-    ["позволять", "допускать", "let"],
-    ["делать", "do", "make"],
-    ["карта", "map"],
-    ["меня", "мне", "me"],
-    ["перо", "ручка", "pen"],
-    ["план", "plan"],
-    ["стол", "таблица", "table"],
-    ["брать", "взять", "take"],
-    ["сказать", "tell"],
-    ["тот", "та", "то", "that"],
-    ["им", "их", "them"]
+    [["и"], ["and"]],
+    [["яблоко"], ["apple"]],
+    [["лампа"], ["lamp"]],
+    [["позволять", "допускать"], ["let"]],
+    [["делать"], ["do", "make"]],
+    [["карта"], ["map"]],
+    [["меня", "мне"], ["me"]],
+    [["перо", "ручка"], ["pen"]],
+    [["план"], ["plan"]],
+    [["стол", "таблица"], ["table"]],
+    [["брать", "взять"], ["take"]],
+    [["сказать"], ["tell"]],
+    [["тот", "та", "то"], ["that"]],
+    [["им", "их"], ["them"]]
 ]
 
 lesson_2_list = [
-    ["все", "всё", "all"],
-    ["портфель", "мешок", "bag"],
-    ["чёрный", "black"],
-    ["книга", "book"],
-    ["ящик", "коробка", "box"],
-    ["ребёнок", "child"],
-    ["дети", "children"],
-    ["друг", "friend"],
-    ["давать", "give"],
-    ["хороший", "good"],
-    ["его", "his"],
-    ["в", "in"],
-    ["человек", "мужчина", "man"],
-    ["мужчины", "men"],
-    ["мой", "my"],
-    ["заметка", "запись", "note"],
-    ["тетрадь", "записная книжка", "notebook"],
-    ["на", "on"],
-    ["открывать", "open"],
-    ["карандаш", "pencil"],
-    ["класть", "положить", "put"],
-    ["видеть", "see"],
-    ["учить", "учиться", "изучать", "study"],
-    ["хорошо", "well"],
-    ["женщина", "woman"],
-    ["женщины", "women"]
+    [["все", "всё"], ["all"]],
+    [["портфель", "мешок"], ["bag"]],
+    [["чёрный"], ["black"]],
+    [["книга"], ["book"]],
+    [["ящик", "коробка"], ["box"]],
+    [["ребёнок"], ["child"]],
+    [["дети"], ["children"]],
+    ["друг", ["friend"]],
+    [["давать"], ["give"]],
+    [["хороший"], ["good"]],
+    [["его"], ["his"]],
+    [["в"], ["in"]],
+    [["человек", "мужчина"], ["man"]],
+    [["мужчины"], ["men"]],
+    [["мой"], ["my"]],
+    [["заметка", "запись"], ["note"]],
+    [["тетрадь", "записная книжка"], ["notebook"]],
+    [["на"], ["on"]],
+    [["открывать"], ["open"]],
+    [["карандаш"], ["pencil"]],
+    [["класть", "положить"], ["put"]],
+    [["видеть"], ["see"]],
+    [["учить", "учиться", "изучать"], ["study"]],
+    [["хорошо"], ["well"]],
+    [["женщина"], ["woman"]],
+    [["женщины"], ["women"]]
 ]
 
 lesson_3_list = [
 
 ]
 
-list_lists = lesson_1_list
+list_lists = lesson_1_list + lesson_2_list
 
 
 def words_test():
@@ -342,13 +342,20 @@ def test_word():
 
 def world_test_list():
     random_list = random.choice(list_lists)
-    random_word = random.choice(random_list)
+    random_ru_or_eng = random.choice(random_list)
+    random_word = random.choice(random_ru_or_eng)
 
     print(f"Translate: {random_word}")
 
     user_input = input("Your answer: ")
 
-    if user_input.lower() in random_list and user_input.lower() != random_word:
-        print("True")
-    else:
-        print("No")
+    if random_ru_or_eng == random_list[0]:
+        if user_input.lower() in random_list[1]:
+            print("True")
+        else:
+            print("False")
+    if random_ru_or_eng == random_list[1]:
+        if user_input.lower() in random_list[0]:
+            print("True")
+        else:
+            print("False")
