@@ -260,6 +260,25 @@ lesson_8 = {
 dict_list = [lesson_1, lesson_2, lesson_3, lesson_4, lesson_5, lesson_6, lesson_7, lesson_8]
 # user_input = ""
 
+lesson_1_list = [
+    ["и", "and"],
+    ["яблоко", "apple"],
+    ["лампа", "lamp"],
+    ["позволять", "допускать", "let"],
+    ["делать", "составлять", "make"],
+    ["карта", "map"],
+    ["меня", "мне", "me"],
+    ["перо", "ручка", "pen"],
+    ["план", "plan"],
+    ["стол", "таблица", "table"],
+    ["брать", "взять", "take"],
+    ["сказать", "tell"],
+    ["тот", "та", "то", "that"],
+    ["им", "их", "them"]
+]
+
+list_lists = lesson_1_list
+
 
 def words_test():
     user_input = ""
@@ -286,3 +305,17 @@ def test_word():
     random_dict = random.choice(dict_list)
     random_key = random.choice(list(random_dict.keys()))
     return random_key, random_dict[random_key]
+
+
+def world_test_list():
+    random_list = random.choice(list_lists)
+    random_word = random.choice(random_list)
+
+    print(f"Translate: {random_word}")
+
+    user_input = input("Your answer: ")
+
+    if user_input.lower() in random_list and user_input.lower() != random_word:
+        print("True")
+    else:
+        print("No")
