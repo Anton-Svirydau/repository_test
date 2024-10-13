@@ -1,11 +1,12 @@
 from eng_dict import words_test
 from eng_dict import test_word
+from eng_dict import world_test_list
 
 # words_test()
 
-abc, bcd = test_word()
-
-print(abc, bcd)
+# abc, bcd = test_word()
+#
+# print(abc, bcd)
 
 # some_list = [
 #     ["apple", "banana", "grape"],
@@ -25,3 +26,5 @@ print(abc, bcd)
 #
 # if a == 0:
 #     print("No")
+
+world_test_list()
