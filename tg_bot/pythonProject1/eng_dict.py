@@ -556,3 +556,14 @@ def world_test_list():
             print("True")
         else:
             print(f"False -> {random_list[0]}")
+
+
+def word_list_test():
+    random_list = random.choice(list_with_lesson_lists)
+    random_ru_or_eng = random.choice(random_list)
+    random_word = random.choice(random_ru_or_eng)
+
+    if random_ru_or_eng == random_list[0]:
+        return random_word, random_list[1]
+    if random_ru_or_eng == random_list[1]:
+        return random_word, random_list[0]
