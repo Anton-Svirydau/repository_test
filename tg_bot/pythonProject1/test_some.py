@@ -1,6 +1,7 @@
 from eng_dict import words_test
 from eng_dict import test_word
 from eng_dict import world_test_list
+from eng_dict import word_list_test
 
 # words_test()
 
@@ -27,4 +28,7 @@ from eng_dict import world_test_list
 # if a == 0:
 #     print("No")
 
-world_test_list()
+# world_test_list()
+
+some_word, some_list = word_list_test()
+print(some_word, some_list)
