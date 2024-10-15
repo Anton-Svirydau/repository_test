@@ -506,6 +506,10 @@ lesson_8_list = [
     [["да"], ["yes"]]
 ]
 
+lesson_9_list = [
+
+]
+
 list_with_lesson_lists = (lesson_1_list + lesson_2_list + lesson_3_list + lesson_4_list + lesson_5_list +
                           lesson_6_list + lesson_7_list + lesson_8_list)
 
