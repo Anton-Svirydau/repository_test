@@ -571,3 +571,50 @@ def word_list_test():
         return random_word, random_list[1]
     if random_ru_or_eng == random_list[1]:
         return random_word, random_list[0]
+
+
+def x_random(x):
+    cnt = 0
+
+    for i in range(x):
+        random_list = random.choice(list_with_lesson_lists)
+        random_ru_or_eng = random.choice(random_list)
+        random_word = random.choice(random_ru_or_eng)
+
+        print(f"Translate: {random_word}")
+
+        user_input = input("Your answer: ")
+
+        if random_ru_or_eng == random_list[0]:
+            if user_input.lower() in random_list[1]:
+                print("True")
+                cnt += 1
+            else:
+                print(f"False -> {random_list[1]}")
+        if random_ru_or_eng == random_list[1]:
+            if user_input.lower() in random_list[0]:
+                print("True")
+                cnt += 1
+            else:
+                print(f"False -> {random_list[0]}")
+
+    print(f"Right answer: {cnt}")
+
+
+def random_words_choose(x):
+    random_words_list = []
+    translation_option = []
+
+    for i in range(x):
+        random_list = random.choice(list_with_lesson_lists)
+        random_ru_or_eng = random.choice(random_list)
+        random_word = random.choice(random_ru_or_eng)
+
+        random_words_list += [random_word]
+
+        if random_ru_or_eng == random_list[0]:
+            translation_option += [random_list[1]]
+        if random_ru_or_eng == random_list[1]:
+            translation_option += [random_list[0]]
+
+    return random_words_list, translation_option
