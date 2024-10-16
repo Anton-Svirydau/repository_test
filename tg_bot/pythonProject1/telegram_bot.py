@@ -102,7 +102,10 @@ def random_check(message):
         markup.add("Rules ✊")
         markup.add("Words ✌️")
         markup.add("Tests ✋")
-        bot.send_message(message.chat.id, f"Buddy, right answer: {right_answer}", reply_markup=markup)
+        if right_answer / amount_words_test >= 0.9:
+            bot.send_message(message.chat.id, f"Buddy, your right answer: {right_answer} 👍", reply_markup=markup)
+        else:
+            bot.send_message(message.chat.id, f"Buddy, your right answer: {right_answer} 👎", reply_markup=markup)
 
 
 bot.infinity_polling()
