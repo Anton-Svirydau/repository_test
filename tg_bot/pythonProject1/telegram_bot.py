@@ -27,7 +27,8 @@ global_random_answer_1 = ['-1']
 def initial_choice(message):
     markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     if message.text == 'Rules':
-        bot.send_message(message.chat.id, "This option is currently unavailable. 1", reply_markup=markup)
+        photo_0 = open('botRules.jpg', 'rb')
+        bot.send_photo(message.chat.id, photo_0)
     elif message.text == 'Words':
         random_word, random_answer = word_list_test()
         global global_random_answer
