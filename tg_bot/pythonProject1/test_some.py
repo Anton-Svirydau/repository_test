@@ -2,6 +2,8 @@ from eng_dict import words_test
 from eng_dict import test_word
 from eng_dict import world_test_list
 from eng_dict import word_list_test
+from eng_dict import x_random
+from eng_dict import random_words_choose
 
 # words_test()
 
@@ -30,5 +32,11 @@ from eng_dict import word_list_test
 
 # world_test_list()
 
-some_word, some_list = word_list_test()
-print(some_word, some_list)
+# some_word, some_list = word_list_test()
+# print(some_word, some_list)
+
+# x_random(10)
+
+a, b = random_words_choose(3)
+print(a)
+print(b)
