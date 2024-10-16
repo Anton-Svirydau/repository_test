@@ -18,14 +18,26 @@ def send_menu(message):
 
 
 user_values = []
+translation_option = []
 translation_option_10 = []
+random_words_list = []
 random_words_list_10 = []
+translation_option_20 = []
+random_words_list_20 = []
+translation_option_50 = []
+random_words_list_50 = []
+translation_option_100 = []
+random_words_list_100 = []
 right_answer = 0
 amount_words_test = 0
 
 
 @bot.message_handler(content_types=["text"])
 def initial_choice(message):
+    global user_values
+    global random_words_list
+    global translation_option
+
     if message.text == "Rules ✊":
         photo = open("botRules.jpg", "rb")
         bot.send_photo(message.chat.id, photo)
@@ -46,25 +58,52 @@ def initial_choice(message):
         bot.send_message(message.chat.id, "Your choose 'Tests ✋'")
 
     elif message.text == "10 words 😃":
-        # bot.send_message(message.chat.id, "Your choose '20 words 🙂'")
-        global user_values
         global random_words_list_10
         global translation_option_10
         amount_words_test = 10
         markup = types.ReplyKeyboardRemove()
         random_words_list_10, translation_option_10 = random_words_choose(10)
+        random_words_list = random_words_list_10
+        translation_option = translation_option_10
         answer_to_user = bot.send_message(message.chat.id, f"Translate: {random_words_list_10[len(user_values)]}",
                                           reply_markup=markup)
         bot.register_next_step_handler(answer_to_user, random_check)
 
     elif message.text == "20 words 🙂":
-        bot.send_message(message.chat.id, "Your choose '20 words 🙂'")
+        global random_words_list_20
+        global translation_option_20
+        amount_words_test = 20
+        markup = types.ReplyKeyboardRemove()
+        random_words_list_20, translation_option_20 = random_words_choose(20)
+        random_words_list = random_words_list_20
+        translation_option = translation_option_20
+        answer_to_user = bot.send_message(message.chat.id, f"Translate: {random_words_list_20[len(user_values)]}",
+                                          reply_markup=markup)
+        bot.register_next_step_handler(answer_to_user, random_check)
 
     elif message.text == "50 words 😐":
-        bot.send_message(message.chat.id, "Your choose '50 words 😐'")
+        global random_words_list_50
+        global translation_option_50
+        amount_words_test = 50
+        markup = types.ReplyKeyboardRemove()
+        random_words_list_50, translation_option_50 = random_words_choose(50)
+        random_words_list = random_words_list_50
+        translation_option = translation_option_50
+        answer_to_user = bot.send_message(message.chat.id, f"Translate: {random_words_list_50[len(user_values)]}",
+                                          reply_markup=markup)
+        bot.register_next_step_handler(answer_to_user, random_check)
 
     elif message.text == "100 words 🥶":
-        bot.send_message(message.chat.id, "Your choose '100 words 🥶'")
+        global random_words_list_100
+        global translation_option_100
+        amount_words_test = 100
+        markup = types.ReplyKeyboardRemove()
+        random_words_list_100, translation_option_100 = random_words_choose(100)
+        random_words_list = random_words_list_100
+        translation_option = translation_option_100
+        answer_to_user = bot.send_message(message.chat.id, f"Translate: {random_words_list_100[len(user_values)]}",
+                                          reply_markup=markup)
+        bot.register_next_step_handler(answer_to_user, random_check)
 
     elif message.text == "Infinity mode 💀":
         bot.send_message(message.chat.id, "Your choose 'Infinity mode 💀'")
@@ -83,17 +122,17 @@ def random_check(message):
     markup = types.ReplyKeyboardRemove()
     global user_values
     global right_answer
-    if message.text.lower() in translation_option_10[len(user_values)]:
+    if message.text.lower() in translation_option[len(user_values)]:
         right_answer += 1
         bot.send_message(message.chat.id, "✅ You are right ✅", reply_markup=markup)
     else:
         bot.send_message(message.chat.id, f"❌ You are wrong ❌ 👉 "
-                                          f"{', '.join(map(str, translation_option_10[len(user_values)]))}",
+                                          f"{', '.join(map(str, translation_option[len(user_values)]))}",
                          reply_markup=markup)
 
     if len(user_values) < amount_words_test - 1:
         user_values += ["1"]
-        answer_to_user = bot.send_message(message.chat.id, f"Translate: {random_words_list_10[len(user_values)]}",
+        answer_to_user = bot.send_message(message.chat.id, f"Translate: {random_words_list[len(user_values)]}",
                                           reply_markup=markup)
         bot.register_next_step_handler(answer_to_user, random_check)
     else:
@@ -103,9 +142,11 @@ def random_check(message):
         markup.add("Words ✌️")
         markup.add("Tests ✋")
         if right_answer / amount_words_test >= 0.9:
-            bot.send_message(message.chat.id, f"Buddy, your right answer: {right_answer} 👍", reply_markup=markup)
+            bot.send_message(message.chat.id, f"Buddy, your right answer: {right_answer}/{amount_words_test}👍",
+                             reply_markup=markup)
         else:
-            bot.send_message(message.chat.id, f"Buddy, your right answer: {right_answer} 👎", reply_markup=markup)
+            bot.send_message(message.chat.id, f"Buddy, your right answer: {right_answer}/{amount_words_test} 👎",
+                             reply_markup=markup)
 
 
 bot.infinity_polling()
