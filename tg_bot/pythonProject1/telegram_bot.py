@@ -21,6 +21,7 @@ user_values = []
 translation_option_10 = []
 random_words_list_10 = []
 right_answer = 0
+amount_words_test = 0
 
 
 @bot.message_handler(content_types=["text"])
@@ -32,6 +33,8 @@ def initial_choice(message):
     elif message.text == "Words ✌️":
         global right_answer
         right_answer = 0
+        global amount_words_test
+        amount_words_test = 0
         markup = types.ReplyKeyboardRemove()
         markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
         markup.add("10 words 😃", "20 words 🙂", "50 words 😐")
@@ -47,6 +50,7 @@ def initial_choice(message):
         global user_values
         global random_words_list_10
         global translation_option_10
+        amount_words_test = 10
         markup = types.ReplyKeyboardRemove()
         random_words_list_10, translation_option_10 = random_words_choose(10)
         answer_to_user = bot.send_message(message.chat.id, f"Translate: {random_words_list_10[len(user_values)]}",
@@ -81,12 +85,13 @@ def random_check(message):
     global right_answer
     if message.text.lower() in translation_option_10[len(user_values)]:
         right_answer += 1
-        bot.send_message(message.chat.id, "You right", reply_markup=markup)
+        bot.send_message(message.chat.id, "✅ You are right ✅", reply_markup=markup)
     else:
-        bot.send_message(message.chat.id, f"You not right -> {translation_option_10[len(user_values)]}",
+        bot.send_message(message.chat.id, f"❌ You are wrong ❌ 👉 "
+                                          f"{', '.join(map(str, translation_option_10[len(user_values)]))}",
                          reply_markup=markup)
 
-    if len(user_values) < 9:
+    if len(user_values) < amount_words_test - 1:
         user_values += ["1"]
         answer_to_user = bot.send_message(message.chat.id, f"Translate: {random_words_list_10[len(user_values)]}",
                                           reply_markup=markup)
