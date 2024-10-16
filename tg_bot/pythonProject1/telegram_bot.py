@@ -3,6 +3,7 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 import random
 from telebot import types
 from eng_dict import test_word
+from eng_dict import word_list_test
 
 TOKEN = "7519131220:AAEUsqn2XovEMu8b5pEc197V-SBQAK4M2Wo"
 
@@ -18,8 +19,8 @@ def send_welcome(message):
     bot.send_message(message.chat.id, "Hi, dude, choose one", reply_markup=markup)
 
 
-global_random_answer = '-1'
-global_random_answer_1 = '-1'
+global_random_answer = ['-1']
+global_random_answer_1 = ['-1']
 
 
 @bot.message_handler(content_types=["text"])
@@ -28,7 +29,7 @@ def initial_choice(message):
     if message.text == 'Rules':
         bot.send_message(message.chat.id, "This option is currently unavailable. 1", reply_markup=markup)
     elif message.text == 'Words':
-        random_word, random_answer = test_word()
+        random_word, random_answer = word_list_test()
         global global_random_answer
         global_random_answer = random_answer
         request_answer = f"Translate: {random_word}"
@@ -46,10 +47,10 @@ def initial_choice(message):
         markup.add("Rules")
         markup.add("Words")
         markup.add("Tests")
-        bot.send_message(message.chat.id, "Dude, choose one", reply_markup=markup)
+        bot.send_message(message.chat.id, "Buddy, choose one", reply_markup=markup)
 
     elif message.text == 'Once again':
-        random_word_1, random_answer_1 = test_word()
+        random_word_1, random_answer_1 = word_list_test()
         global global_random_answer_1
         global_random_answer_1 = random_answer_1
         request_answer_1 = f"Translate: {random_word_1}"
@@ -63,7 +64,7 @@ def words_test_choice(message):
     markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     markup.add('Once again')
     markup.add('Give up')
-    if message.text.lower() == global_random_answer.lower():
+    if message.text.lower() in global_random_answer:
         photo = open('botTrue.png', 'rb')
         bot.send_photo(message.chat.id, photo)
         bot.send_message(message.chat.id, "You are right", reply_markup=markup)
@@ -78,7 +79,7 @@ def words_test_choice_1(message):
     markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
     markup.add('Once again')
     markup.add('Give up')
-    if message.text.lower() == global_random_answer_1.lower():
+    if message.text.lower() in global_random_answer_1:
         photo = open('botTrue.png', 'rb')
         bot.send_photo(message.chat.id, photo)
         bot.send_message(message.chat.id, "You are right 🎉", reply_markup=markup)
