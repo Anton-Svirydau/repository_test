@@ -3,6 +3,8 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 from telebot import types
 from eng_dict import random_words_choose
 from eng_dict import word_list_test
+from googletrans import Translator
+import random
 
 TOKEN = "7519131220:AAEUsqn2XovEMu8b5pEc197V-SBQAK4M2Wo"
 
@@ -23,6 +25,9 @@ translation_option = []
 random_words_list = []
 right_answer = 0
 amount_words_test = 0
+translator = Translator()
+eng_list = ["table", "let", "take"]
+current_word = "-1"
 
 
 @bot.message_handler(content_types=["text"])
@@ -48,7 +53,11 @@ def initial_choice(message):
         bot.send_message(message.chat.id, "Choose mode 😈", reply_markup=markup)
 
     elif message.text == "Tests ✋":
-        bot.send_message(message.chat.id, "Your choose 'Tests ✋'")
+        global current_word
+        markup = types.ReplyKeyboardRemove()
+        current_word = random.choice(eng_list)
+        ask_word = bot.send_message(message.chat.id, f"Translate: {current_word}", reply_markup=markup)
+        bot.register_next_step_handler(ask_word, check_translation)
 
     elif message.text == "10 words 😃":
         amount_words_test = 10
@@ -144,6 +153,19 @@ def infinity_check(message):
         bot.send_message(message.chat.id, "✅ You are right ✅", reply_markup=markup)
     else:
         bot.send_message(message.chat.id, f"❌ No, bro, are you kidding? ❌ 👉 {translation_option}", reply_markup=markup)
+
+
+@bot.message_handler(content_types=["text"])
+def check_translation(message):
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+    markup.add("Rules ✊")
+    markup.add("Words ✌️")
+    markup.add("Tests ✋")
+    translation = translator.translate(current_word, src='en', dest='ru').text.lower()
+    if message.text.lower() == translation:
+        bot.send_message(message.chat.id, "True", reply_markup=markup)
+    else:
+        bot.send_message(message.chat.id, f"No, true is: {translation}", reply_markup=markup)
 
 
 bot.infinity_polling()

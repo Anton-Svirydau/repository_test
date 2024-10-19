@@ -4,6 +4,7 @@ from eng_dict import world_test_list
 from eng_dict import word_list_test
 from eng_dict import x_random
 from eng_dict import random_words_choose
+from googletrans import Translator
 
 # words_test()
 
@@ -37,6 +38,21 @@ from eng_dict import random_words_choose
 
 # x_random(10)
 
-a, b = random_words_choose(3)
-print(a)
-print(b)
+# a, b = random_words_choose(3)
+# print(a)
+# print(b)
+
+translator = Translator()
+
+src = 'en'
+dest = 'ru'
+
+text = "space"
+trnslt = input()
+
+translated_text = translator.translate(text, src=src, dest=dest).text
+
+if trnslt.lower() == translated_text:
+    print("True")
+else:
+    print(f"No, true is: {translated_text}")
