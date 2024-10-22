@@ -50,9 +50,6 @@ dest = 'ru'
 text = "space"
 trnslt = input()
 
-translated_text = translator.translate(text, src=src, dest=dest).text
+translated_text = translator.translate(trnslt, src=src, dest=dest).text
 
-if trnslt.lower() == translated_text:
-    print("True")
-else:
-    print(f"No, true is: {translated_text}")
+print(translated_text)

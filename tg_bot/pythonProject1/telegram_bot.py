@@ -26,8 +26,6 @@ random_words_list = []
 right_answer = 0
 amount_words_test = 0
 translator = Translator()
-eng_list = ["table", "let", "take"]
-current_word = "-1"
 
 
 @bot.message_handler(content_types=["text"])
@@ -53,11 +51,22 @@ def initial_choice(message):
         bot.send_message(message.chat.id, "Choose mode 😈", reply_markup=markup)
 
     elif message.text == "Tests ✋":
-        global current_word
         markup = types.ReplyKeyboardRemove()
-        current_word = random.choice(eng_list)
-        ask_word = bot.send_message(message.chat.id, f"Translate: {current_word}", reply_markup=markup)
-        bot.register_next_step_handler(ask_word, check_translation)
+        markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+        markup.add("Ru 👉 Eng")
+        markup.add("Eng 👉 Ru")
+        markup.add("Give up 👎")
+        bot.send_message(message.chat.id, f"Choose the type of translation 🤓", reply_markup=markup)
+
+    elif message.text == "Ru 👉 Eng":
+        markup = types.ReplyKeyboardRemove()
+        ask_translation = bot.send_message(message.chat.id, f"What should I translate?", reply_markup=markup)
+        bot.register_next_step_handler(ask_translation, user_message_translation_ru_en)
+
+    elif message.text == "Eng 👉 Ru":
+        markup = types.ReplyKeyboardRemove()
+        ask_translation = bot.send_message(message.chat.id, f"What should I translate?", reply_markup=markup)
+        bot.register_next_step_handler(ask_translation, user_message_translation_en_ru)
 
     elif message.text == "10 words 😃":
         amount_words_test = 10
@@ -156,16 +165,23 @@ def infinity_check(message):
 
 
 @bot.message_handler(content_types=["text"])
-def check_translation(message):
+def user_message_translation_en_ru(message):
     markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
     markup.add("Rules ✊")
     markup.add("Words ✌️")
     markup.add("Tests ✋")
-    translation = translator.translate(current_word, src='en', dest='ru').text.lower()
-    if message.text.lower() == translation:
-        bot.send_message(message.chat.id, "True", reply_markup=markup)
-    else:
-        bot.send_message(message.chat.id, f"No, true is: {translation}", reply_markup=markup)
+    translation = translator.translate(message.text, src='en', dest='ru').text.lower()
+    bot.send_message(message.chat.id, f"Translate: {translation}", reply_markup=markup)
+
+
+@bot.message_handler(content_types=["text"])
+def user_message_translation_ru_en(message):
+    markup = ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+    markup.add("Rules ✊")
+    markup.add("Words ✌️")
+    markup.add("Tests ✋")
+    translation = translator.translate(message.text, src='ru', dest='en').text.lower()
+    bot.send_message(message.chat.id, f"Translate: {translation}", reply_markup=markup)
 
 
 bot.infinity_polling()
