@@ -145,7 +145,7 @@ def random_check(message):
         markup.add("Rules ✊")
         markup.add("Words ✌️")
         markup.add("Tests ✋")
-        if right_answer / amount_words_test >= 0.8:
+        if right_answer / amount_words_test >= 0.9:
             bot.send_message(message.chat.id, f"Buddy, your right answer: {right_answer}/{amount_words_test}👍",
                              reply_markup=markup)
         else:
