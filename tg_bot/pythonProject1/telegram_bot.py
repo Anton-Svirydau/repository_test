@@ -184,4 +184,9 @@ def user_message_translation_ru_en(message):
     bot.send_message(message.chat.id, f"Translate: {translation}", reply_markup=markup)
 
 
+@bot.message_handler(content_types=["text"])
+def zero_fun(message):
+    pass
+
+
 bot.infinity_polling()
