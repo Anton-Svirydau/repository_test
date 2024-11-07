@@ -1,9 +1,9 @@
-from eng_dict import words_test
-from eng_dict import test_word
-from eng_dict import world_test_list
-from eng_dict import word_list_test
-from eng_dict import x_random
-from eng_dict import random_words_choose
+# from eng_dict import words_test
+# from eng_dict import test_word
+# from eng_dict import world_test_list
+# from eng_dict import word_list_test
+# from eng_dict import x_random
+# from eng_dict import random_words_choose
 from googletrans import Translator
 
 # words_test()
