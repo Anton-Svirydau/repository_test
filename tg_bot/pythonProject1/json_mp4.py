@@ -7,7 +7,7 @@ with open('shaka_offline_db_exported_data.json', 'r') as f:
 
 # Предположим, что base64-данные хранятся под ключом 'video_data'
 # Поменяйте ключ на тот, который у вас в JSON-файле
-base64_data = data['manifest-v5']
+base64_data = data['segment-v5']
 
 # Декодируем и записываем в файл
 binary_data = base64.b64decode(base64_data)
