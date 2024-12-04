@@ -27,7 +27,7 @@ def is_potential_base64(string):
         if len(string) > 50:  # Минимальная длина строки base64
             base64.b64decode(string, validate=True)
             return True
-    except Exception as e:
+    except Exception:
         pass
     return False
 
