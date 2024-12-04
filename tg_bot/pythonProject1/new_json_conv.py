@@ -18,6 +18,7 @@ def explore_json(data, parent_key=''):
     else:
         pass
 
+
 def is_potential_base64(string):
     """
     Проверка, может ли строка быть base64.
@@ -26,9 +27,10 @@ def is_potential_base64(string):
         if len(string) > 50:  # Минимальная длина строки base64
             base64.b64decode(string, validate=True)
             return True
-    except Exception:
+    except Exception as e:
         pass
     return False
+
 
 def save_base64_data(data, path):
     """
@@ -45,6 +47,7 @@ def save_base64_data(data, path):
         print(f"Сохранено: {output_file}")
     except Exception as e:
         print(f"Ошибка при сохранении данных по пути {path}: {e}")
+
 
 # Загрузка JSON-файла
 input_file = 'shaka_offline_db_exported_data.json'
