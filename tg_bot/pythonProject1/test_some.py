@@ -48,8 +48,8 @@ src = 'en'
 dest = 'ru'
 
 text = "space"
-trnslt = input()
+translate_1 = input()
 
-translated_text = translator.translate(trnslt, src=src, dest=dest).text
+translated_text = translator.translate(translate_1, src=src, dest=dest).text
 
 print(translated_text)
