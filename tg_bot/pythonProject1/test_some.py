@@ -5,6 +5,7 @@
 # from eng_dict import x_random
 # from eng_dict import random_words_choose
 from googletrans import Translator
+from timeit import default_timer as timer
 
 # words_test()
 #
@@ -42,6 +43,7 @@ from googletrans import Translator
 # print(a)
 # print(b)
 
+
 translator = Translator()
 
 src = 'en'
@@ -50,6 +52,11 @@ dest = 'ru'
 text = "space"
 translate_1 = input()
 
+start = timer()
+
 translated_text = translator.translate(translate_1, src=src, dest=dest).text
 
 print(translated_text)
+
+end = timer()
+print(f"Время выполнения: {end - start:.5f} секунд")
