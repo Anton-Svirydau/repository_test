@@ -2,6 +2,7 @@ import json
 import base64
 import os
 
+
 def explore_json(data, parent_key=''):
     """
     Рекурсивный анализ JSON для выявления строк, которые могут быть base64.

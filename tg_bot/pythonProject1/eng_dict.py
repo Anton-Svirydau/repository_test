@@ -1,5 +1,5 @@
 import random
-
+from timeit import default_timer as timer
 
 lesson_1 = {
     "и": "and",
