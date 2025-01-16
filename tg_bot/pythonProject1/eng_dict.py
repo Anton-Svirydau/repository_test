@@ -597,6 +597,16 @@ def x_random(x):
     print(f"Right answer: {cnt}")
 
 
+def pr_print(x):
+    random_list = random.choice(list_with_lesson_lists)
+    random_ru_or_eng = random.choice(random_list)
+    random_word = random.choice(random_ru_or_eng)
+
+    print()
+
+    user_input = input()
+
+
 def random_words_choose(x):
     random_words_list = []
     translation_option = []
