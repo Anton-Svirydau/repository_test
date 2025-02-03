@@ -60,12 +60,12 @@ from timeit import default_timer as timer
 #
 # end = timer()
 # print(f"Время выполнения: {end - start:.5f} секунд")
-#
-#
-# def prnt():
-#     some = 1
-#     if some == 1:
-#         print("some = 1")
-#     else:
-#         print("something wrong ;(")
-#     return some
+
+
+def prnt():
+    some = 1
+    if some == 1:
+        print("some = 1")
+    else:
+        print("something wrong ;(")
+    return some
