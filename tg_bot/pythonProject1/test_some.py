@@ -44,28 +44,19 @@ from timeit import default_timer as timer
 # print(b)
 
 
-# translator = Translator()
-#
-# src = 'en'
-# dest = 'ru'
-#
-# text = "space"
-# translate_1 = input()
-#
-# start = timer()
-#
-# translated_text = translator.translate(translate_1, src=src, dest=dest).text
-#
-# print(translated_text)
-#
-# end = timer()
-# print(f"Время выполнения: {end - start:.5f} секунд")
+translator = Translator()
 
+src = 'en'
+dest = 'ru'
 
-def prnt():
-    some = 1
-    if some == 1:
-        print("some = 1")
-    else:
-        print("something wrong ;(")
-    return some
+text = "space"
+translate_1 = input()
+
+start = timer()
+
+translated_text = translator.translate(translate_1, src=src, dest=dest).text
+
+print(translated_text)
+
+end = timer()
+print(f"Время выполнения: {end - start:.5f} секунд")
