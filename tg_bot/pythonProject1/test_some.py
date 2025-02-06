@@ -6,6 +6,11 @@
 # from eng_dict import random_words_choose
 from googletrans import Translator
 from timeit import default_timer as timer
+import urllib
+import json
+import datetime
+import itertools
+import random
 
 # words_test()
 #
