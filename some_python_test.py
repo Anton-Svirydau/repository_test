@@ -3,6 +3,7 @@ import random
 import itertools
 import os
 import sys
+from urllib.request import urlopen
 
 
 start = timer()
@@ -76,7 +77,15 @@ get_windows_version_some = sys.getwindowsversion()
 
 # print(sys.modules)
 
-print(sys.platform)
+# print(sys.platform)
+
+
+url = "https://www.example.com"
+response = urlopen(url)
+
+print(response.read())
+
+print(response.read().decode('utf-8'))
 
 
 end = timer()
