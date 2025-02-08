@@ -1,5 +1,6 @@
 import random
 import itertools
+import os
 
 
 some_list = [1, 2, 3, 4, 5]
@@ -47,3 +48,11 @@ starmap_some = list(itertools.starmap(pow, [(2,5), (3,2), (10,3)]))
 take_while_some = list(itertools.takewhile(lambda x: x<5, [1,4,6,4,1]))
 
 # print(*take_while_some)
+
+os_name = os.name
+
+# print(os_name)
+
+get_pid_some = os.getpid()
+
+# print(get_pid_some)
