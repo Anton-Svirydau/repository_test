@@ -1,6 +1,11 @@
+from timeit import default_timer as timer
 import random
 import itertools
 import os
+import sys
+
+
+start = timer()
 
 
 some_list = [1, 2, 3, 4, 5]
@@ -56,3 +61,23 @@ os_name = os.name
 get_pid_some = os.getpid()
 
 # print(get_pid_some)
+
+get_default_encoding = sys.getdefaultencoding()
+
+# print(get_default_encoding)
+
+get_file_system_encoding_some = sys.getfilesystemencoding()
+
+# print(get_file_system_encoding_some)
+
+get_windows_version_some = sys.getwindowsversion()
+
+# print(get_windows_version_some)
+
+# print(sys.modules)
+
+print(sys.platform)
+
+
+end = timer()
+print(f"Время выполнения: {end - start:.5f} секунд")
