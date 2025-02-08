@@ -3,7 +3,8 @@ import random
 import itertools
 import os
 import sys
-from urllib.request import urlopen
+# from urllib.request import urlopen
+import datetime
 
 
 start = timer()
@@ -80,12 +81,15 @@ get_windows_version_some = sys.getwindowsversion()
 # print(sys.platform)
 
 
-url = "https://www.example.com"
-response = urlopen(url)
+# url = "https://www.example.com"
+# response = urlopen(url)
+#
+# print(response.read())
+#
+# print(response.read().decode('utf-8'))
 
-print(response.read())
-
-print(response.read().decode('utf-8'))
+print(datetime.date(1999, 7, 8))
+print(datetime.time(4, 5, 45))
 
 
 end = timer()
